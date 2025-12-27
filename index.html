@@ -12,13 +12,13 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+       
         body {
             background-color: #f5f7fa;
             color: #333;
             padding: 20px;
         }
-        
+       
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -27,47 +27,47 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
-        
+       
         .header {
-            background: linear-gradient(135deg, #1a5f7a 0%, #2a9d8f 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 20px 30px;
             text-align: center;
         }
-        
+       
         .header h1 {
             font-size: 28px;
             margin-bottom: 5px;
         }
-        
+       
         .header p {
             opacity: 0.9;
             font-size: 16px;
         }
-        
+       
         .content {
             padding: 30px;
         }
-        
+       
         .section {
             margin-bottom: 35px;
             padding-bottom: 25px;
             border-bottom: 1px solid #eaeaea;
         }
-        
+       
         .section-title {
             font-size: 20px;
-            color: #2a9d8f;
+            color: #667eea;
             margin-bottom: 20px;
             padding-bottom: 8px;
             border-bottom: 2px solid #eaeaea;
             display: flex;
             align-items: center;
         }
-        
+       
         .section-title i {
             margin-right: 10px;
-            background-color: #2a9d8f;
+            background-color: #667eea;
             color: white;
             width: 32px;
             height: 32px;
@@ -76,27 +76,27 @@
             align-items: center;
             justify-content: center;
         }
-        
+       
         .form-row {
             display: flex;
             flex-wrap: wrap;
             margin: 0 -15px;
         }
-        
+       
         .form-group {
             flex: 1;
             min-width: 250px;
             padding: 0 15px;
             margin-bottom: 20px;
         }
-        
+       
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: #555;
         }
-        
+       
         input, select, textarea {
             width: 100%;
             padding: 12px 15px;
@@ -105,50 +105,50 @@
             font-size: 16px;
             transition: all 0.3s;
         }
-        
+       
         input:focus, select:focus, textarea:focus {
-            border-color: #2a9d8f;
-            box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.2);
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
             outline: none;
         }
-        
+       
         .expense-box {
-            background-color: #f9f9f9;
+            background-color: #f0f8ff;
             padding: 15px;
             border-radius: 5px;
-            border-left: 4px solid #2a9d8f;
+            border-left: 4px solid #667eea;
         }
-        
+       
         .expense-value {
             font-size: 24px;
             font-weight: bold;
-            color: #2a9d8f;
+            color: #667eea;
         }
-        
+       
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        
+       
         th {
-            background-color: #f2f2f2;
+            background-color: #f8f9ff;
             padding: 15px;
             text-align: left;
             font-weight: 600;
             color: #555;
             border-bottom: 2px solid #ddd;
         }
-        
+       
         td {
             padding: 15px;
             border-bottom: 1px solid #eee;
         }
-        
+       
         tr:hover {
-            background-color: #f9f9f9;
+            background-color: #f0f8ff;
         }
-        
+       
         .action-buttons {
             display: flex;
             justify-content: center;
@@ -157,7 +157,7 @@
             padding-top: 30px;
             border-top: 1px solid #eaeaea;
         }
-        
+       
         .btn {
             padding: 14px 30px;
             border: none;
@@ -171,85 +171,101 @@
             justify-content: center;
             gap: 8px;
         }
-        
+       
         .btn-primary {
-            background-color: #2a9d8f;
+            background-color: #667eea;
             color: white;
         }
-        
+       
         .btn-primary:hover {
-            background-color: #21867a;
+            background-color: #5a6fd8;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
+       
         .btn-secondary {
-            background-color: #6c757d;
+            background-color: #ff6b6b;
             color: white;
         }
-        
+       
         .btn-secondary:hover {
-            background-color: #5a6268;
+            background-color: #ff5252;
             transform: translateY(-2px);
         }
-        
+       
         .preview-section {
-            background-color: #f8f9fa;
+            background-color: #f8f9ff;
             padding: 25px;
             border-radius: 8px;
             margin-top: 30px;
             display: none;
+            border: 1px solid #e0e7ff;
         }
-        
+       
         .preview-section h3 {
-            color: #1a5f7a;
+            color: #667eea;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 1px solid #ddd;
         }
-        
+       
         .preview-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
-        
+       
         .preview-item {
             background-color: white;
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 4px solid #667eea;
         }
-        
+       
+        .preview-item:nth-child(even) {
+            border-left-color: #ff6b6b;
+            background-color: #fff5f5;
+        }
+       
         .preview-label {
             font-weight: 600;
             color: #555;
             margin-bottom: 5px;
         }
-        
+       
         .preview-value {
             color: #333;
             font-size: 16px;
         }
-        
+       
         .preview-table {
             margin-top: 20px;
             overflow-x: auto;
         }
-        
+       
         .preview-table table {
             min-width: 800px;
         }
-        
+       
+        .preview-table th {
+            background-color: #667eea;
+            color: white;
+        }
+       
+        .preview-table tr:nth-child(even) {
+            background-color: #f0f8ff;
+        }
+       
         @media (max-width: 768px) {
             .form-group {
                 min-width: 100%;
             }
-            
+           
             .action-buttons {
                 flex-direction: column;
             }
-            
+           
             .btn {
                 width: 100%;
             }
@@ -262,7 +278,7 @@
             <h1><i class="fas fa-user-clock"></i> Labour Attendance Entry System</h1>
             <p>SGX Minerals Private Limited - Anakapalli Branch</p>
         </div>
-        
+       
         <div class="content">
             <div class="section">
                 <h2 class="section-title"><i class="fas fa-building"></i> Company & Shift Details</h2>
@@ -289,7 +305,7 @@
                         <input type="date" id="date" value="2025-12-27">
                     </div>
                 </div>
-                
+               
                 <div class="form-row">
                     <div class="form-group">
                         <label for="labourType">Labour Type</label>
@@ -331,7 +347,7 @@
                     </div>
                 </div>
             </div>
-            
+           
             <div class="section">
                 <h2 class="section-title"><i class="fas fa-users"></i> Labour & Expense Details</h2>
                 <div class="form-row">
@@ -352,19 +368,16 @@
                     </div>
                 </div>
             </div>
-            
+           
             <div class="section">
                 <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Labour Attendance Table</h2>
-                <p style="margin-bottom: 15px; color: #666;">Select labour names and other details will auto-fill based on your selection.</p>
+                <p style="margin-bottom: 15px; color: #666;">Select labour names, enter/edit in/out times and wages. Wages auto-suggest on name selection. Other details (Type, Activity, Vendor) auto-populate globally and show in preview.</p>
                 <div class="table-container">
                     <table id="labourTable">
                         <thead>
                             <tr>
                                 <th>Sr No</th>
                                 <th>Labour Name</th>
-                                <th>Labour Type</th>
-                                <th>Activity</th>
-                                <th>Vendor</th>
                                 <th>In Time</th>
                                 <th>Out Time</th>
                                 <th>Wages (₹)</th>
@@ -376,7 +389,7 @@
                     </table>
                 </div>
             </div>
-            
+           
             <div class="action-buttons">
                 <button class="btn btn-primary" id="previewBtn">
                     <i class="fas fa-eye"></i> Preview Attendance
@@ -385,13 +398,13 @@
                     <i class="fas fa-save"></i> Save Attendance
                 </button>
             </div>
-            
+           
             <div class="preview-section" id="previewSection">
-                <h3><i class="fas fa-file-alt"></i> Attendance Saved Successfully!</h3>
-                <p style="margin-bottom: 20px; color: #2a9d8f; font-weight: 600;">
-                    <i class="fas fa-check-circle"></i> Attendance details have been saved to the database.
+                <h3><i class="fas fa-file-alt"></i> Attendance Preview</h3>
+                <p style="margin-bottom: 20px; color: #667eea; font-weight: 600;">
+                    <i class="fas fa-info-circle"></i> Review details below. Labour Type, Activity, and Vendor are applied globally to all entries.
                 </p>
-                
+               
                 <div class="preview-grid">
                     <div class="preview-item">
                         <div class="preview-label">Company</div>
@@ -434,9 +447,9 @@
                         <div class="preview-value" id="previewTotalExpense">₹ 0</div>
                     </div>
                 </div>
-                
+               
                 <div class="preview-table">
-                    <h4 style="margin-top: 25px; margin-bottom: 15px;">Labour Details</h4>
+                    <h4 style="margin-top: 25px; margin-bottom: 15px; color: #667eea;">Labour Details</h4>
                     <table>
                         <thead>
                             <tr>
@@ -458,7 +471,6 @@
             </div>
         </div>
     </div>
-
     <script>
         // Labour data for dropdowns
         const labourNames = [
@@ -466,23 +478,28 @@
             "Anil Gupta", "Manoj Tiwari", "Deepak Verma", "Kiran Yadav", "Sanjay Mishra",
             "Prakash Singh", "Ramesh Choudhary", "Sohan Lal", "Mohan Das", "Harish Kumar"
         ];
-        
-        const labourTypes = ["Skilled", "Unskilled", "Other"];
-        const activities = ["Development", "Production", "Other"];
-        const vendors = ["ABC Contractors", "XYZ Suppliers", "MNO Services", "PQR Enterprises", "STU Vendors"];
-        
+       
+        // Shift defaults for in/out times
+        const shiftDefaults = {
+            morning: { in: '06:00', out: '14:00' },
+            general: { in: '09:00', out: '17:00' },
+            night: { in: '22:00', out: '06:00' }
+        };
+       
         // Initialize table with default 5 rows
         document.addEventListener('DOMContentLoaded', function() {
             generateTableRows(5);
             setupEventListeners();
             updateTotalExpense();
+            // Set initial times based on selected shift
+            updateShiftTimes();
         });
-        
+       
         // Generate table rows based on labour count
         function generateTableRows(count) {
             const tableBody = document.getElementById('tableBody');
             tableBody.innerHTML = '';
-            
+           
             for (let i = 1; i <= count; i++) {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -494,73 +511,44 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" class="labour-type" data-index="${i}" placeholder="Auto-filled" readonly>
-                    </td>
-                    <td>
-                        <input type="text" class="activity" data-index="${i}" placeholder="Auto-filled" readonly>
-                    </td>
-                    <td>
-                        <input type="text" class="vendor" data-index="${i}" placeholder="Auto-filled" readonly>
-                    </td>
-                    <td>
                         <input type="time" class="in-time" data-index="${i}" value="09:00">
                     </td>
                     <td>
                         <input type="time" class="out-time" data-index="${i}" value="17:00">
                     </td>
                     <td>
-                        <input type="number" class="wage" data-index="${i}" placeholder="Auto-filled" min="0" step="10" readonly>
+                        <input type="number" class="wage" data-index="${i}" placeholder="Enter wage" min="0" step="10">
                     </td>
                 `;
                 tableBody.appendChild(row);
             }
-            
-            // Add event listeners to wage inputs
+           
+            // Add event listeners
+            document.querySelectorAll('.labour-name').forEach(select => {
+                select.addEventListener('change', function() {
+                    const index = this.dataset.index;
+                    const labourName = this.value;
+                    if (labourName) {
+                        // Auto-suggest wage based on name
+                        suggestWageForName(index, labourName);
+                    }
+                    updateTotalExpense();
+                });
+            });
+           
             document.querySelectorAll('.wage').forEach(input => {
                 input.addEventListener('input', updateTotalExpense);
             });
-            
-            // Add event listeners to labour name dropdowns
-            document.querySelectorAll('.labour-name').forEach(select => {
-                select.addEventListener('change', function() {
-                    if(this.value) {
-                        // Auto-populate other fields based on labour name
-                        const index = this.dataset.index;
-                        autoFillLabourDetails(index, this.value);
-                    } else {
-                        // Clear fields if no name selected
-                        const index = this.dataset.index;
-                        clearLabourDetails(index);
-                    }
-                });
-            });
+           
+            // Set times based on current shift
+            updateShiftTimes();
         }
-        
-        // Clear labour details
-        function clearLabourDetails(index) {
-            const row = document.querySelector(`tr:nth-child(${index})`);
-            if (row) {
-                row.querySelector('.labour-type').value = '';
-                row.querySelector('.activity').value = '';
-                row.querySelector('.vendor').value = '';
-                row.querySelector('.wage').value = '';
-            }
-            updateTotalExpense();
-        }
-        
-        // Auto-fill labour details based on name selection
-        function autoFillLabourDetails(index, labourName) {
-            // Get values from top dropdowns
-            const labourType = document.getElementById('labourType').value;
-            const activity = document.getElementById('activity').value;
-            const vendor = document.getElementById('vendor').value;
-            
-            const row = document.querySelector(`tr:nth-child(${index})`);
-            
-            // Map labour names to wages for demo (different wages for different names)
+       
+        // Suggest wage based on labour name (sets but allows edit)
+        function suggestWageForName(index, labourName) {
             const wageMap = {
                 "Rahul Sharma": 1200,
-                "Amit Patel": 1100, 
+                "Amit Patel": 1100,
                 "Vikram Singh": 1250,
                 "Rajesh Kumar": 800,
                 "Suresh Reddy": 850,
@@ -575,45 +563,42 @@
                 "Mohan Das": 950,
                 "Harish Kumar": 1100
             };
-            
-            // Set values from top dropdowns
-            if (row) {
-                row.querySelector('.labour-type').value = labourType === 'skilled' ? 'Skilled' : 
-                                                         labourType === 'unskilled' ? 'Unskilled' : 
-                                                         labourType === 'other' ? 'Other' : '';
-                
-                row.querySelector('.activity').value = activity === 'development' ? 'Development' : 
-                                                      activity === 'production' ? 'Production' : 
-                                                      activity === 'other' ? 'Other' : '';
-                
-                row.querySelector('.vendor').value = vendor === 'abc' ? 'ABC Contractors' : 
-                                                    vendor === 'xyz' ? 'XYZ Suppliers' : 
-                                                    vendor === 'mno' ? 'MNO Services' : 
-                                                    vendor === 'pqr' ? 'PQR Enterprises' : '';
-                
-                // Set wage based on labour name
-                row.querySelector('.wage').value = wageMap[labourName] || "";
+            const suggestedWage = wageMap[labourName] || 0;
+            const wageInput = document.querySelector(`[data-index="${index}"].wage`);
+            if (wageInput && !wageInput.value) {
+                wageInput.value = suggestedWage;
             }
-            
-            // Update total expense
-            updateTotalExpense();
         }
-        
+       
+        // Update all in/out times based on current shift
+        function updateShiftTimes() {
+            const shift = document.getElementById('shift').value;
+            if (shift && shiftDefaults[shift]) {
+                const { in: defaultIn, out: defaultOut } = shiftDefaults[shift];
+                document.querySelectorAll('.in-time').forEach(input => {
+                    input.value = defaultIn;
+                });
+                document.querySelectorAll('.out-time').forEach(input => {
+                    input.value = defaultOut;
+                });
+            }
+        }
+       
         // Update total expense based on wage inputs
         function updateTotalExpense() {
             let total = 0;
             document.querySelectorAll('.wage').forEach(input => {
                 total += parseFloat(input.value) || 0;
             });
-            
+           
             document.getElementById('totalExpense').textContent = total.toLocaleString('en-IN');
-            
+           
             // Update wages field with average
             const labourCount = parseInt(document.getElementById('labourCount').value);
             const averageWage = labourCount > 0 ? Math.round(total / labourCount) : 0;
             document.getElementById('wages').value = averageWage.toLocaleString('en-IN');
         }
-        
+       
         // Setup event listeners
         function setupEventListeners() {
             // Labour count change
@@ -621,169 +606,160 @@
                 const count = parseInt(this.value) || 1;
                 generateTableRows(count);
             });
-            
-            // Update table rows when top dropdowns change
-            document.getElementById('labourType').addEventListener('change', updateAllRows);
-            document.getElementById('activity').addEventListener('change', updateAllRows);
-            document.getElementById('vendor').addEventListener('change', updateAllRows);
-            
+           
+            // Shift change: update times
+            document.getElementById('shift').addEventListener('change', updateShiftTimes);
+           
             // Preview button
             document.getElementById('previewBtn').addEventListener('click', showPreview);
-            
+           
             // Save button
             document.getElementById('saveBtn').addEventListener('click', saveAttendance);
         }
-        
-        // Update all rows when top dropdowns change
-        function updateAllRows() {
-            const rows = document.querySelectorAll('#tableBody tr');
-            rows.forEach((row, index) => {
-                const labourNameSelect = row.querySelector('.labour-name');
-                if (labourNameSelect && labourNameSelect.value) {
-                    autoFillLabourDetails(index + 1, labourNameSelect.value);
-                }
-            });
+       
+        // Get global values for type, activity, vendor
+        function getGlobalDetails() {
+            const labourTypeSelect = document.getElementById('labourType');
+            const labourTypeText = labourTypeSelect.options[labourTypeSelect.selectedIndex].text;
+            const labourType = labourTypeText !== '-- Select Type --' ? labourTypeText : '';
+           
+            const activitySelect = document.getElementById('activity');
+            const activityText = activitySelect.options[activitySelect.selectedIndex].text;
+            const activity = activityText !== '-- Select Activity --' ? activityText : '';
+           
+            const vendorSelect = document.getElementById('vendor');
+            const vendorText = vendorSelect.options[vendorSelect.selectedIndex].text;
+            const vendor = vendorText !== '-- Select Vendor --' ? vendorText : '';
+           
+            return { labourType, activity, vendor };
         }
-        
+       
         // Save attendance
         function saveAttendance() {
             // Validate required fields
             const labourCount = parseInt(document.getElementById('labourCount').value);
             let valid = true;
             let emptyNames = [];
-            
+           
             for (let i = 1; i <= labourCount; i++) {
-                const row = document.querySelector(`tr:nth-child(${i})`);
-                const labourName = row.querySelector('.labour-name').value;
+                const labourName = document.querySelector(`[data-index="${i}"].labour-name`).value;
                 if (!labourName) {
                     valid = false;
                     emptyNames.push(i);
                 }
             }
-            
+           
             if (!valid) {
                 alert(`Please select labour names for rows: ${emptyNames.join(', ')}`);
                 return;
             }
-            
+           
             // Show preview with success message
             showPreview();
-            
-            // Change preview title to success message
-            document.querySelector('#previewSection h3').innerHTML = '<i class="fas fa-check-circle"></i> Attendance Saved Successfully!';
-            
+           
+            // Change preview title to success
+            document.querySelector('#previewSection h3').innerHTML = '<i class="fas fa-check-circle" style="color: #4caf50;"></i> Attendance Saved Successfully!';
+            document.querySelector('#previewSection p').innerHTML = '<i class="fas fa-check-circle" style="color: #4caf50;"></i> Attendance details have been saved to the database.';
+           
             // In a real application, this would send data to a server
             console.log("Attendance data saved to database");
-            
-            // Here you would typically make an API call to save the data
-            // Example:
-            // fetch('/api/save-attendance', {
-            //     method: 'POST',
-            //     headers: {'Content-Type': 'application/json'},
-            //     body: JSON.stringify(getAttendanceData())
-            // })
         }
-        
+       
         // Get all attendance data for saving
         function getAttendanceData() {
+            const { labourType, activity, vendor: vendorGlobal } = getGlobalDetails();
             const data = {
                 company: document.getElementById('company').value,
                 branch: document.getElementById('branch').value,
                 shift: document.getElementById('shift').value,
                 date: document.getElementById('date').value,
-                labourType: document.getElementById('labourType').value,
-                activity: document.getElementById('activity').value,
+                labourType,
+                activity,
                 shiftIncharge: document.getElementById('shiftIncharge').value,
-                vendor: document.getElementById('vendor').value,
+                vendor: vendorGlobal,
                 labourCount: document.getElementById('labourCount').value,
                 totalExpense: document.getElementById('totalExpense').textContent,
                 labourDetails: []
             };
-            
+           
             const rows = document.querySelectorAll('#tableBody tr');
             rows.forEach((row, index) => {
+                const indexNum = index + 1;
                 const labourDetail = {
-                    srNo: index + 1,
+                    srNo: indexNum,
                     name: row.querySelector('.labour-name').value,
-                    type: row.querySelector('.labour-type').value,
-                    activity: row.querySelector('.activity').value,
-                    vendor: row.querySelector('.vendor').value,
+                    type: labourType,
+                    activity,
+                    vendor: vendorGlobal,
                     inTime: row.querySelector('.in-time').value,
                     outTime: row.querySelector('.out-time').value,
                     wage: row.querySelector('.wage').value
                 };
                 data.labourDetails.push(labourDetail);
             });
-            
+           
             return data;
         }
-        
+       
         // Show preview
         function showPreview() {
             // Update preview section with current values
             document.getElementById('previewCompany').textContent = document.getElementById('company').value;
             document.getElementById('previewBranch').textContent = document.getElementById('branch').value;
-            
+           
             const shiftSelect = document.getElementById('shift');
             const shiftText = shiftSelect.options[shiftSelect.selectedIndex].text;
             document.getElementById('previewShift').textContent = shiftText;
-            
+           
             // Format date
             const date = new Date(document.getElementById('date').value);
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
             document.getElementById('previewDate').textContent = date.toLocaleDateString('en-IN', options);
-            
+           
             const inchargeSelect = document.getElementById('shiftIncharge');
             const inchargeText = inchargeSelect.options[inchargeSelect.selectedIndex].text;
             document.getElementById('previewIncharge').textContent = inchargeText !== '-- Select In-Charges --' ? inchargeText : 'Not selected';
-            
-            const labourTypeSelect = document.getElementById('labourType');
-            const labourTypeText = labourTypeSelect.options[labourTypeSelect.selectedIndex].text;
-            document.getElementById('previewLabourType').textContent = labourTypeText !== '-- Select Type --' ? labourTypeText : 'Not selected';
-            
-            const activitySelect = document.getElementById('activity');
-            const activityText = activitySelect.options[activitySelect.selectedIndex].text;
-            document.getElementById('previewActivity').textContent = activityText !== '-- Select Activity --' ? activityText : 'Not selected';
-            
-            const vendorSelect = document.getElementById('vendor');
-            const vendorText = vendorSelect.options[vendorSelect.selectedIndex].text;
-            document.getElementById('previewVendor').textContent = vendorText !== '-- Select Vendor --' ? vendorText : 'Not selected';
-            
+           
+            const { labourType, activity, vendor } = getGlobalDetails();
+            document.getElementById('previewLabourType').textContent = labourType || 'Not selected';
+            document.getElementById('previewActivity').textContent = activity || 'Not selected';
+            document.getElementById('previewVendor').textContent = vendor || 'Not selected';
+           
             document.getElementById('previewLabourCount').textContent = document.getElementById('labourCount').value;
             document.getElementById('previewTotalExpense').textContent = '₹ ' + document.getElementById('totalExpense').textContent;
-            
+           
             // Update preview table
             const previewTableBody = document.getElementById('previewTableBody');
             previewTableBody.innerHTML = '';
-            
+           
             const rows = document.querySelectorAll('#tableBody tr');
             rows.forEach((row, index) => {
                 const srNo = index + 1;
                 const labourName = row.querySelector('.labour-name').value || '--';
-                const labourType = row.querySelector('.labour-type').value || '--';
-                const activity = row.querySelector('.activity').value || '--';
-                const vendor = row.querySelector('.vendor').value || '--';
+                const labourTypeVal = labourType || '--';
+                const activityVal = activity || '--';
+                const vendorVal = vendor || '--';
                 const inTime = row.querySelector('.in-time').value || '--';
                 const outTime = row.querySelector('.out-time').value || '--';
                 const wage = row.querySelector('.wage').value || '0';
-                
+               
                 const previewRow = document.createElement('tr');
                 previewRow.innerHTML = `
                     <td>${srNo}</td>
                     <td>${labourName}</td>
-                    <td>${labourType}</td>
-                    <td>${activity}</td>
-                    <td>${vendor}</td>
+                    <td>${labourTypeVal}</td>
+                    <td>${activityVal}</td>
+                    <td>${vendorVal}</td>
                     <td>${inTime}</td>
                     <td>${outTime}</td>
                     <td>₹ ${parseInt(wage).toLocaleString('en-IN')}</td>
                 `;
                 previewTableBody.appendChild(previewRow);
             });
-            
+           
             // Show preview section
             document.getElementById('previewSection').style.display = 'block';
-            
+           
             // Scroll to preview
             document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
         }
