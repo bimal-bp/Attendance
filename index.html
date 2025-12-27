@@ -305,6 +305,17 @@
                         <input type="date" id="date" value="2025-12-27">
                     </div>
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="inTime">In Time</label>
+                        <input type="time" id="inTime" value="09:00">
+                    </div>
+                    <div class="form-group">
+                        <label for="outTime">Out Time</label>
+                        <input type="time" id="outTime" value="17:00">
+                    </div>
+                </div>
                
                 <div class="form-row">
                     <div class="form-group">
@@ -329,10 +340,11 @@
                         <label for="shiftIncharge">Shift In-Charges</label>
                         <select id="shiftIncharge">
                             <option value="">-- Select In-Charges --</option>
-                            <option value="john" selected>John Smith</option>
-                            <option value="sarah">Sarah Johnson</option>
-                            <option value="mike">Mike Williams</option>
-                            <option value="priya">Priya Patel</option>
+                            <option value="sib" selected>Sib Prasad Komu</option>
+                            <option value="bijay">Bijay Parida</option>
+                            <option value="krishna">Krishna</option>
+                            <option value="jay">Jay Prakash</option>
+                            <option value="himanshi">Himanshi</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -356,14 +368,14 @@
                         <input type="number" id="labourCount" min="1" max="50" value="5">
                     </div>
                     <div class="form-group">
-                        <label for="wages">Wages (₹)</label>
-                        <input type="text" id="wages" placeholder="Auto-calculated" disabled>
+                        <label for="wages">Wages (₹) per Labour</label>
+                        <input type="number" id="wages" min="0" step="10" value="900">
                     </div>
                     <div class="form-group">
                         <label>Total Expense (₹)</label>
                         <div class="expense-box">
                             <div class="expense-value">₹ <span id="totalExpense">0</span></div>
-                            <p>Auto-calculated based on labour entries</p>
+                            <p>Auto-calculated as No. of Labour × Wages per Labour</p>
                         </div>
                     </div>
                 </div>
@@ -371,16 +383,13 @@
            
             <div class="section">
                 <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Labour Attendance Table</h2>
-                <p style="margin-bottom: 15px; color: #666;">Select labour names, enter/edit in/out times and wages. Wages auto-suggest on name selection. Other details (Type, Activity, Vendor) auto-populate globally and show in preview.</p>
+                <p style="margin-bottom: 15px; color: #666;">Select labour names only. In/Out times set globally above, wages fixed per labour. Other details (Type, Activity, Vendor) auto-populate globally and show in preview.</p>
                 <div class="table-container">
                     <table id="labourTable">
                         <thead>
                             <tr>
                                 <th>Sr No</th>
                                 <th>Labour Name</th>
-                                <th>In Time</th>
-                                <th>Out Time</th>
-                                <th>Wages (₹)</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
@@ -423,8 +432,16 @@
                         <div class="preview-value" id="previewDate">27 December 2025</div>
                     </div>
                     <div class="preview-item">
+                        <div class="preview-label">In Time</div>
+                        <div class="preview-value" id="previewInTime">09:00</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Out Time</div>
+                        <div class="preview-value" id="previewOutTime">17:00</div>
+                    </div>
+                    <div class="preview-item">
                         <div class="preview-label">Shift In-Charge</div>
-                        <div class="preview-value" id="previewIncharge">John Smith</div>
+                        <div class="preview-value" id="previewIncharge">Sib Prasad Komu</div>
                     </div>
                     <div class="preview-item">
                         <div class="preview-label">Labour Type</div>
@@ -441,6 +458,10 @@
                     <div class="preview-item">
                         <div class="preview-label">Total Labour</div>
                         <div class="preview-value" id="previewLabourCount">5</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Wages per Labour</div>
+                        <div class="preview-value" id="previewWages">₹ 900</div>
                     </div>
                     <div class="preview-item">
                         <div class="preview-label">Total Expense</div>
@@ -486,7 +507,7 @@
             night: { in: '22:00', out: '06:00' }
         };
        
-        // Initialize table with default 5 rows
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             generateTableRows(5);
             setupEventListeners();
@@ -495,7 +516,7 @@
             updateShiftTimes();
         });
        
-        // Generate table rows based on labour count
+        // Generate table rows based on labour count (only name visible)
         function generateTableRows(count) {
             const tableBody = document.getElementById('tableBody');
             tableBody.innerHTML = '';
@@ -510,102 +531,41 @@
                             ${labourNames.map(name => `<option value="${name}">${name}</option>`).join('')}
                         </select>
                     </td>
-                    <td>
-                        <input type="time" class="in-time" data-index="${i}" value="09:00">
-                    </td>
-                    <td>
-                        <input type="time" class="out-time" data-index="${i}" value="17:00">
-                    </td>
-                    <td>
-                        <input type="number" class="wage" data-index="${i}" placeholder="Enter wage" min="0" step="10">
-                    </td>
                 `;
                 tableBody.appendChild(row);
             }
-           
-            // Add event listeners
-            document.querySelectorAll('.labour-name').forEach(select => {
-                select.addEventListener('change', function() {
-                    const index = this.dataset.index;
-                    const labourName = this.value;
-                    if (labourName) {
-                        // Auto-suggest wage based on name
-                        suggestWageForName(index, labourName);
-                    }
-                    updateTotalExpense();
-                });
-            });
-           
-            document.querySelectorAll('.wage').forEach(input => {
-                input.addEventListener('input', updateTotalExpense);
-            });
-           
-            // Set times based on current shift
-            updateShiftTimes();
         }
        
-        // Suggest wage based on labour name (sets but allows edit)
-        function suggestWageForName(index, labourName) {
-            const wageMap = {
-                "Rahul Sharma": 1200,
-                "Amit Patel": 1100,
-                "Vikram Singh": 1250,
-                "Rajesh Kumar": 800,
-                "Suresh Reddy": 850,
-                "Anil Gupta": 1150,
-                "Manoj Tiwari": 900,
-                "Deepak Verma": 1050,
-                "Kiran Yadav": 750,
-                "Sanjay Mishra": 950,
-                "Prakash Singh": 1000,
-                "Ramesh Choudhary": 850,
-                "Sohan Lal": 900,
-                "Mohan Das": 950,
-                "Harish Kumar": 1100
-            };
-            const suggestedWage = wageMap[labourName] || 0;
-            const wageInput = document.querySelector(`[data-index="${index}"].wage`);
-            if (wageInput && !wageInput.value) {
-                wageInput.value = suggestedWage;
-            }
-        }
-       
-        // Update all in/out times based on current shift
+        // Update in/out time inputs based on current shift
         function updateShiftTimes() {
             const shift = document.getElementById('shift').value;
             if (shift && shiftDefaults[shift]) {
                 const { in: defaultIn, out: defaultOut } = shiftDefaults[shift];
-                document.querySelectorAll('.in-time').forEach(input => {
-                    input.value = defaultIn;
-                });
-                document.querySelectorAll('.out-time').forEach(input => {
-                    input.value = defaultOut;
-                });
+                document.getElementById('inTime').value = defaultIn;
+                document.getElementById('outTime').value = defaultOut;
             }
         }
        
-        // Update total expense based on wage inputs
+        // Update total expense based on labour count and wage per labour
         function updateTotalExpense() {
-            let total = 0;
-            document.querySelectorAll('.wage').forEach(input => {
-                total += parseFloat(input.value) || 0;
-            });
+            const labourCount = parseInt(document.getElementById('labourCount').value) || 0;
+            const wagePerLabour = parseFloat(document.getElementById('wages').value) || 0;
+            const total = labourCount * wagePerLabour;
            
             document.getElementById('totalExpense').textContent = total.toLocaleString('en-IN');
-           
-            // Update wages field with average
-            const labourCount = parseInt(document.getElementById('labourCount').value);
-            const averageWage = labourCount > 0 ? Math.round(total / labourCount) : 0;
-            document.getElementById('wages').value = averageWage.toLocaleString('en-IN');
         }
        
         // Setup event listeners
         function setupEventListeners() {
             // Labour count change
-            document.getElementById('labourCount').addEventListener('change', function() {
+            document.getElementById('labourCount').addEventListener('input', function() {
                 const count = parseInt(this.value) || 1;
                 generateTableRows(count);
+                updateTotalExpense();
             });
+           
+            // Wages change
+            document.getElementById('wages').addEventListener('input', updateTotalExpense);
            
             // Shift change: update times
             document.getElementById('shift').addEventListener('change', updateShiftTimes);
@@ -634,6 +594,19 @@
             return { labourType, activity, vendor };
         }
        
+        // Get global in/out times
+        function getGlobalTimes() {
+            return {
+                inTime: document.getElementById('inTime').value || '--',
+                outTime: document.getElementById('outTime').value || '--'
+            };
+        }
+       
+        // Get global wage
+        function getGlobalWage() {
+            return parseFloat(document.getElementById('wages').value) || 0;
+        }
+       
         // Save attendance
         function saveAttendance() {
             // Validate required fields
@@ -642,8 +615,8 @@
             let emptyNames = [];
            
             for (let i = 1; i <= labourCount; i++) {
-                const labourName = document.querySelector(`[data-index="${i}"].labour-name`).value;
-                if (!labourName) {
+                const select = document.querySelector(`[data-index="${i}"].labour-name`);
+                if (!select || !select.value) {
                     valid = false;
                     emptyNames.push(i);
                 }
@@ -668,32 +641,37 @@
         // Get all attendance data for saving
         function getAttendanceData() {
             const { labourType, activity, vendor: vendorGlobal } = getGlobalDetails();
+            const { inTime, outTime } = getGlobalTimes();
+            const wage = getGlobalWage();
             const data = {
                 company: document.getElementById('company').value,
                 branch: document.getElementById('branch').value,
                 shift: document.getElementById('shift').value,
                 date: document.getElementById('date').value,
+                inTime,
+                outTime,
                 labourType,
                 activity,
                 shiftIncharge: document.getElementById('shiftIncharge').value,
                 vendor: vendorGlobal,
                 labourCount: document.getElementById('labourCount').value,
+                wagesPerLabour: wage,
                 totalExpense: document.getElementById('totalExpense').textContent,
                 labourDetails: []
             };
            
             const rows = document.querySelectorAll('#tableBody tr');
             rows.forEach((row, index) => {
-                const indexNum = index + 1;
+                const select = row.querySelector('.labour-name');
                 const labourDetail = {
-                    srNo: indexNum,
-                    name: row.querySelector('.labour-name').value,
+                    srNo: index + 1,
+                    name: select ? select.value : '',
                     type: labourType,
                     activity,
                     vendor: vendorGlobal,
-                    inTime: row.querySelector('.in-time').value,
-                    outTime: row.querySelector('.out-time').value,
-                    wage: row.querySelector('.wage').value
+                    inTime,
+                    outTime,
+                    wage
                 };
                 data.labourDetails.push(labourDetail);
             });
@@ -716,6 +694,10 @@
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
             document.getElementById('previewDate').textContent = date.toLocaleDateString('en-IN', options);
            
+            const { inTime, outTime } = getGlobalTimes();
+            document.getElementById('previewInTime').textContent = inTime;
+            document.getElementById('previewOutTime').textContent = outTime;
+           
             const inchargeSelect = document.getElementById('shiftIncharge');
             const inchargeText = inchargeSelect.options[inchargeSelect.selectedIndex].text;
             document.getElementById('previewIncharge').textContent = inchargeText !== '-- Select In-Charges --' ? inchargeText : 'Not selected';
@@ -726,6 +708,8 @@
             document.getElementById('previewVendor').textContent = vendor || 'Not selected';
            
             document.getElementById('previewLabourCount').textContent = document.getElementById('labourCount').value;
+            const wage = getGlobalWage();
+            document.getElementById('previewWages').textContent = '₹ ' + wage.toLocaleString('en-IN');
             document.getElementById('previewTotalExpense').textContent = '₹ ' + document.getElementById('totalExpense').textContent;
            
             // Update preview table
@@ -735,13 +719,11 @@
             const rows = document.querySelectorAll('#tableBody tr');
             rows.forEach((row, index) => {
                 const srNo = index + 1;
-                const labourName = row.querySelector('.labour-name').value || '--';
+                const select = row.querySelector('.labour-name');
+                const labourName = select ? select.value : '--';
                 const labourTypeVal = labourType || '--';
                 const activityVal = activity || '--';
                 const vendorVal = vendor || '--';
-                const inTime = row.querySelector('.in-time').value || '--';
-                const outTime = row.querySelector('.out-time').value || '--';
-                const wage = row.querySelector('.wage').value || '0';
                
                 const previewRow = document.createElement('tr');
                 previewRow.innerHTML = `
@@ -752,7 +734,7 @@
                     <td>${vendorVal}</td>
                     <td>${inTime}</td>
                     <td>${outTime}</td>
-                    <td>₹ ${parseInt(wage).toLocaleString('en-IN')}</td>
+                    <td>₹ ${wage.toLocaleString('en-IN')}</td>
                 `;
                 previewTableBody.appendChild(previewRow);
             });
