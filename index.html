@@ -12,39 +12,39 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-      
+    
         body {
             background-color: #f5f7fa;
             color: #333;
             padding: 20px;
         }
-      
+    
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
-      
+    
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 20px 30px;
             text-align: center;
         }
-      
+    
         .header h1 {
             font-size: 28px;
             margin-bottom: 5px;
         }
-      
+    
         .header p {
             opacity: 0.9;
             font-size: 16px;
         }
-      
+    
         .content {
             padding: 30px;
         }
@@ -86,14 +86,63 @@
         .attendance-content.active {
             display: block;
         }
-      
-        .section {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eaeaea;
+
+        /* ====================== SHARED STYLES ====================== */
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
         }
-      
-        .section-title {
+
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 15px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        /* ====================== PLANT STYLING (Purple Theme) ====================== */
+        #plantContent .section-title {
             font-size: 20px;
             color: #667eea;
             margin-bottom: 20px;
@@ -102,8 +151,8 @@
             display: flex;
             align-items: center;
         }
-      
-        .section-title i {
+
+        #plantContent .section-title i {
             margin-right: 10px;
             background-color: #667eea;
             color: white;
@@ -114,80 +163,35 @@
             align-items: center;
             justify-content: center;
         }
-      
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-        }
-      
-        .form-group {
-            flex: 1;
-            min-width: 250px;
-            padding: 0 15px;
-            margin-bottom: 20px;
-        }
-      
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-        }
-      
-        input, select, textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-      
-        input:focus, select:focus, textarea:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
-            outline: none;
-        }
-      
-        .expense-box {
+
+        #plantContent .expense-box {
             background-color: #f0f8ff;
             padding: 15px;
             border-radius: 5px;
             border-left: 4px solid #667eea;
         }
-      
-        .expense-value {
+
+        #plantContent .expense-value {
             font-size: 24px;
             font-weight: bold;
             color: #667eea;
         }
-      
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+
+        #plantContent .btn-primary {
+            background-color: #667eea;
+            color: white;
         }
-      
-        th {
-            background-color: #f8f9ff;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            color: #555;
-            border-bottom: 2px solid #ddd;
+
+        #plantContent .btn-primary:hover {
+            background-color: #5a6fd8;
         }
-      
-        td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
+
+        #plantContent .preview-table th {
+            background-color: #667eea;
+            color: white;
         }
-      
-        tr:hover {
-            background-color: #f0f8ff;
-        }
-      
-        .action-buttons {
+
+        #plantContent .action-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -195,129 +199,84 @@
             padding-top: 30px;
             border-top: 1px solid #eaeaea;
         }
-      
-        .btn {
+
+        #plantContent .btn {
             padding: 14px 30px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 8px;
         }
-      
-        .btn-primary {
-            background-color: #667eea;
-            color: white;
-        }
-      
-        .btn-primary:hover {
-            background-color: #5a6fd8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-      
-        .btn-secondary {
-            background-color: #ff6b6b;
-            color: white;
-        }
-      
-        .btn-secondary:hover {
-            background-color: #ff5252;
-            transform: translateY(-2px);
-        }
-      
-        .preview-section {
+
+        #plantContent .preview-section {
             background-color: #f8f9ff;
             padding: 25px;
             border-radius: 8px;
             margin-top: 30px;
-            display: none;
             border: 1px solid #e0e7ff;
         }
-      
-        .preview-section h3 {
-            color: #667eea;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-      
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-      
-        .preview-item {
-            background-color: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 4px solid #667eea;
-        }
-      
-        .preview-item:nth-child(even) {
-            border-left-color: #ff6b6b;
-            background-color: #fff5f5;
-        }
-      
-        .preview-label {
-            font-weight: 600;
-            color: #555;
-            margin-bottom: 5px;
-        }
-      
-        .preview-value {
-            color: #333;
-            font-size: 16px;
-        }
-      
-        .preview-table {
-            margin-top: 20px;
-            overflow-x: auto;
-        }
-      
-        .preview-table table {
-            min-width: 800px;
-        }
-      
-        .preview-table th {
-            background-color: #667eea;
+
+        /* ====================== QUARRY STYLING (Green Theme) ====================== */
+        #quarryContent .header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             color: white;
-        }
-      
-        .preview-table tr:nth-child(even) {
-            background-color: #f0f8ff;
-        }
-      
-        .placeholder-section {
+            padding: 20px;
             text-align: center;
-            padding: 50px;
-            color: #666;
-            font-style: italic;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
-        .placeholder-section i {
-            font-size: 48px;
-            color: #ddd;
+        #quarryContent .instructions {
+            background-color: #e8f5f0;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 20px;
+            border-left: 4px solid #11998e;
         }
-      
+
+        #quarryContent .btn {
+            background-color: #11998e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #quarryContent .btn:hover {
+            background-color: #0d7a6b;
+        }
+
+        #quarryContent .present-day {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        #quarryContent .present-night {
+            background-color: #b2dfdb;
+            color: #00695c;
+            font-weight: bold;
+        }
+
+        #quarryContent .absent {
+            background-color: #ffcccc;
+            color: #900;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             .form-group {
                 min-width: 100%;
             }
-          
-            .action-buttons {
+            #plantContent .action-buttons {
                 flex-direction: column;
             }
-          
-            .btn {
+            #plantContent .btn {
                 width: 100%;
             }
         }
@@ -329,18 +288,18 @@
             <h1><i class="fas fa-user-clock"></i> Labour Attendance Entry System</h1>
             <p>SGX Minerals Private Limited - Anakapalli Branch</p>
         </div>
-      
+    
         <div class="content">
             <div class="attendance-type-section">
                 <label for="attendanceType">Select Attendance Type:</label>
                 <select id="attendanceType">
                     <option value="">-- Choose Type --</option>
-                    <option value="plant">Plant Attendance</option>
-                    <option value="quarry">Quarry Attendance</option>
+                    <option value="plant">Plant Attendance (Daily Entry)</option>
+                    <option value="quarry">Quarry Attendance (Monthly Sheet)</option>
                 </select>
             </div>
 
-            <!-- Plant Attendance Content -->
+            <!-- ====================== PLANT ATTENDANCE (DAILY) ====================== -->
             <div id="plantContent" class="attendance-content">
                 <div class="section">
                     <h2 class="section-title"><i class="fas fa-building"></i> Company & Shift Details</h2>
@@ -377,7 +336,7 @@
                             <input type="time" id="outTime" value="17:00">
                         </div>
                     </div>
-              
+             
                     <div class="form-row">
                         <div class="form-group">
                             <label for="labourType">Labour Type</label>
@@ -398,9 +357,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="shiftIncharge">Shift In-Charges</label>
+                            <label for="shiftIncharge">Shift In-Charge</label>
                             <select id="shiftIncharge">
-                                <option value="">-- Select In-Charges --</option>
+                                <option value="">-- Select In-Charge --</option>
                                 <option value="sib" selected>Sib Prasad Komu</option>
                                 <option value="bijay">Bijay Parida</option>
                                 <option value="krishna">Krishna</option>
@@ -420,7 +379,7 @@
                         </div>
                     </div>
                 </div>
-          
+         
                 <div class="section">
                     <h2 class="section-title"><i class="fas fa-users"></i> Labour & Expense Details</h2>
                     <div class="form-row">
@@ -435,16 +394,16 @@
                         <div class="form-group">
                             <label>Total Expense (₹)</label>
                             <div class="expense-box">
-                                <div class="expense-value">₹ <span id="totalExpense">0</span></div>
+                                <div class="expense-value">₹ <span id="totalExpense">4,500</span></div>
                                 <p>Auto-calculated as No. of Labour × Wages per Labour</p>
                             </div>
                         </div>
                     </div>
                 </div>
-          
+         
                 <div class="section">
                     <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Labour Attendance Table</h2>
-                    <p style="margin-bottom: 15px; color: #666;">Select labour names only. In/Out times set globally above, wages fixed per labour. Other details (Type, Activity, Vendor) auto-populate globally and show in preview.</p>
+                    <p style="margin-bottom: 15px; color: #666;">Select labour names only. In/Out times, wages, type, activity, and vendor are applied globally.</p>
                     <div class="table-container">
                         <table id="labourTable">
                             <thead>
@@ -454,84 +413,83 @@
                                 </tr>
                             </thead>
                             <tbody id="tableBody">
-                                <!-- Rows will be generated here -->
+                                <!-- Rows generated by JS -->
                             </tbody>
                         </table>
                     </div>
                 </div>
-          
+         
                 <div class="action-buttons">
                     <button class="btn btn-primary" id="previewBtn">
                         <i class="fas fa-eye"></i> Preview Attendance
                     </button>
-                    <button class="btn btn-secondary" id="saveBtn">
+                    <button class="btn btn-primary" id="saveBtn" style="background-color:#4caf50;">
                         <i class="fas fa-save"></i> Save Attendance
                     </button>
                 </div>
-          
-                <div class="preview-section" id="previewSection">
+         
+                <div class="preview-section" id="previewSection" style="display:none;">
                     <h3><i class="fas fa-file-alt"></i> Attendance Preview</h3>
                     <p style="margin-bottom: 20px; color: #667eea; font-weight: 600;">
-                        <i class="fas fa-info-circle"></i> Review details below. Labour Type, Activity, and Vendor are applied globally to all entries.
+                        Review details below. All global fields are applied to every labour.
                     </p>
-              
-                    <div class="preview-grid">
-                        <div class="preview-item">
-                            <div class="preview-label">Company</div>
-                            <div class="preview-value" id="previewCompany">SGX Minerals Private Limited</div>
+                    <div class="preview-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
+                            <div class="preview-label" style="font-weight:600;color:#555;">Company</div>
+                            <div class="preview-value" id="previewCompany"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Branch</div>
-                            <div class="preview-value" id="previewBranch">SGX-Anakapalli</div>
+                            <div class="preview-value" id="previewBranch"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Shift</div>
-                            <div class="preview-value" id="previewShift">General Shift (9:00 AM - 5:00 PM)</div>
+                            <div class="preview-value" id="previewShift"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Date</div>
-                            <div class="preview-value" id="previewDate">27 December 2025</div>
+                            <div class="preview-value" id="previewDate"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">In Time</div>
-                            <div class="preview-value" id="previewInTime">09:00</div>
+                            <div class="preview-value" id="previewInTime"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Out Time</div>
-                            <div class="preview-value" id="previewOutTime">17:00</div>
+                            <div class="preview-value" id="previewOutTime"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Shift In-Charge</div>
-                            <div class="preview-value" id="previewIncharge">Sib Prasad Komu</div>
+                            <div class="preview-value" id="previewIncharge"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Labour Type</div>
-                            <div class="preview-value" id="previewLabourType">Unskilled</div>
+                            <div class="preview-value" id="previewLabourType"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Activity</div>
-                            <div class="preview-value" id="previewActivity">Production</div>
+                            <div class="preview-value" id="previewActivity"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Vendor</div>
-                            <div class="preview-value" id="previewVendor">ABC Contractors</div>
+                            <div class="preview-value" id="previewVendor"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Total Labour</div>
-                            <div class="preview-value" id="previewLabourCount">5</div>
+                            <div class="preview-value" id="previewLabourCount"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Wages per Labour</div>
-                            <div class="preview-value" id="previewWages">₹ 900</div>
+                            <div class="preview-value" id="previewWages"></div>
                         </div>
-                        <div class="preview-item">
+                        <div class="preview-item" style="background:white;padding:15px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.05);border-left:4px solid #667eea;">
                             <div class="preview-label">Total Expense</div>
-                            <div class="preview-value" id="previewTotalExpense">₹ 0</div>
+                            <div class="preview-value" id="previewTotalExpense"></div>
                         </div>
                     </div>
-              
-                    <div class="preview-table">
-                        <h4 style="margin-top: 25px; margin-bottom: 15px; color: #667eea;">Labour Details</h4>
+             
+                    <div class="preview-table table-container">
+                        <h4 style="margin:25px 0 15px; color:#667eea;">Labour Details</h4>
                         <table>
                             <thead>
                                 <tr>
@@ -545,85 +503,108 @@
                                     <th>Wages (₹)</th>
                                 </tr>
                             </thead>
-                            <tbody id="previewTableBody">
-                                <!-- Preview rows will be added here -->
-                            </tbody>
+                            <tbody id="previewTableBody"></tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <!-- Quarry Attendance Content (Placeholder - Add full form later) -->
+            <!-- ====================== QUARRY ATTENDANCE (MONTHLY) ====================== -->
             <div id="quarryContent" class="attendance-content">
-                <div class="placeholder-section">
-                    <i class="fas fa-tools"></i>
-                    <h2>Quarry Attendance Form</h2>
-                    <p>Quarry attendance form will be added later. Please select Plant Attendance for now or contact admin for updates.</p>
+                <div class="header">
+                    <h1><i class="fas fa-calendar-check"></i> Monthly Quarry Attendance Sheet</h1>
+                    <p>SGX Minerals Private Limited - Anakapalli Branch</p>
+                </div>
+                <div class="instructions">
+                    <strong>How to Mark Attendance:</strong><br>
+                    • Cells start blank (white = not marked yet, assumed absent if not marked).<br>
+                    • <strong>Single Click/Tap:</strong> Mark as Present for the selected shift (P for Day - Light Green, N for Night - Teal).<br>
+                    • <strong>Double Click/Tap:</strong> Mark as Absent (A - Light Red).<br>
+                    • Click again on Present: Toggle back to blank.<br>
+                    • Double click on Absent: Toggle back to blank.
+                </div>
+   
+                <div class="controls" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; align-items: end;">
+                    <div class="form-group">
+                        <label for="monthQuarry">Select Month & Year</label>
+                        <input type="month" id="monthQuarry" value="2025-12">
+                    </div>
+                    <div class="form-group">
+                        <label for="shiftFilterQuarry">Shift for Single Click (Present)</label>
+                        <select id="shiftFilterQuarry">
+                            <option value="day">Day Shift (P - Green)</option>
+                            <option value="night">Night Shift (N - Teal)</option>
+                        </select>
+                    </div>
+                    <button class="btn" id="loadBtnQuarry">
+                        <i class="fas fa-sync"></i> Load / Refresh Sheet
+                    </button>
+                </div>
+   
+                <div class="table-container">
+                    <table id="attendanceTableQuarry">
+                        <thead id="tableHeadQuarry"></thead>
+                        <tbody id="tableBodyQuarry"></tbody>
+                    </table>
+                </div>
+   
+                <div class="summary-table table-container">
+                    <h2 style="margin-bottom: 15px; color: #11998e;">Monthly Summary (Unmarked = Absent)</h2>
+                    <table id="summaryTableQuarry">
+                        <thead>
+                            <tr>
+                                <th>Labour Name</th>
+                                <th>Total Day Shift Present</th>
+                                <th>Total Night Shift Present</th>
+                                <th>Grand Total Present</th>
+                                <th>Total Working Days in Month</th>
+                                <th>Absent Days</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+
     <script>
-        // Labour data for dropdowns (Plant-specific for now)
+        // Shared labour names (used in both Plant and Quarry)
         const labourNames = [
             "Rahul Sharma", "Amit Patel", "Vikram Singh", "Rajesh Kumar", "Suresh Reddy",
             "Anil Gupta", "Manoj Tiwari", "Deepak Verma", "Kiran Yadav", "Sanjay Mishra",
-            "Prakash Singh", "Ramesh Choudhary", "Sohan Lal", "Mohan Das", "Harish Kumar"
+            "Prakash Singh", "Ramesh Choudhary", "Sohan Lal", "Mohan Das", "Harish Kumar",
+            "Naresh Yadav", "Sunil Meena", "Arjun Rao", "Vijay Kumar", "Lokesh Sharma"
         ];
-      
-        // Shift defaults for in/out times
+
+        // Shift defaults for Plant
         const shiftDefaults = {
             morning: { in: '06:00', out: '14:00' },
             general: { in: '09:00', out: '17:00' },
             night: { in: '22:00', out: '06:00' }
         };
-      
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            // Default to Plant
-            document.getElementById('attendanceType').value = 'plant';
-            showContent('plant');
 
-            // Plant-specific init
-            generateTableRows(5);
-            setupPlantEventListeners();
-            updateTotalExpense();
-            updateShiftTimes();
-        });
-
-        // Show/hide content based on selection
+        // Attendance Type Switcher
         document.getElementById('attendanceType').addEventListener('change', function() {
             const type = this.value;
-            if (type === 'plant' || type === 'quarry') {
-                showContent(type);
+            document.querySelectorAll('.attendance-content').forEach(c => c.classList.remove('active'));
+            if (type) {
+                document.getElementById(type + 'Content').classList.add('active');
+                if (type === 'plant') initPlant();
+                if (type === 'quarry') loadQuarryAttendanceSheet();
             }
         });
 
-        function showContent(type) {
-            // Hide all contents
-            document.querySelectorAll('.attendance-content').forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Show selected
-            const selectedContent = document.getElementById(type + 'Content');
-            if (selectedContent) {
-                selectedContent.classList.add('active');
-            }
-
-            // Re-init if switching to plant
-            if (type === 'plant') {
-                generateTableRows(parseInt(document.getElementById('labourCount').value) || 5);
-                updateTotalExpense();
-                updateShiftTimes();
-            }
+        /* ====================== PLANT FUNCTIONS ====================== */
+        function initPlant() {
+            generateTableRows(parseInt(document.getElementById('labourCount').value) || 5);
+            updateTotalExpense();
+            updateShiftTimes();
         }
-      
-        // Plant-specific functions
+
         function generateTableRows(count) {
-            const tableBody = document.getElementById('tableBody');
-            tableBody.innerHTML = '';
-          
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
             for (let i = 1; i <= count; i++) {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -631,221 +612,199 @@
                     <td>
                         <select class="labour-name" data-index="${i}">
                             <option value="">-- Select --</option>
-                            ${labourNames.map(name => `<option value="${name}">${name}</option>`).join('')}
+                            ${labourNames.map(n => `<option value="${n}">${n}</option>`).join('')}
                         </select>
                     </td>
                 `;
-                tableBody.appendChild(row);
+                tbody.appendChild(row);
             }
         }
-      
+
         function updateShiftTimes() {
             const shift = document.getElementById('shift').value;
             if (shift && shiftDefaults[shift]) {
-                const { in: defaultIn, out: defaultOut } = shiftDefaults[shift];
-                document.getElementById('inTime').value = defaultIn;
-                document.getElementById('outTime').value = defaultOut;
+                document.getElementById('inTime').value = shiftDefaults[shift].in;
+                document.getElementById('outTime').value = shiftDefaults[shift].out;
             }
         }
-      
+
         function updateTotalExpense() {
-            const labourCount = parseInt(document.getElementById('labourCount').value) || 0;
-            const wagePerLabour = parseFloat(document.getElementById('wages').value) || 0;
-            const total = labourCount * wagePerLabour;
-          
-            document.getElementById('totalExpense').textContent = total.toLocaleString('en-IN');
+            const count = parseInt(document.getElementById('labourCount').value) || 0;
+            const wage = parseFloat(document.getElementById('wages').value) || 0;
+            document.getElementById('totalExpense').textContent = (count * wage).toLocaleString('en-IN');
         }
-      
-        function setupPlantEventListeners() {
-            // Labour count change
-            document.getElementById('labourCount').addEventListener('input', function() {
-                const count = parseInt(this.value) || 1;
-                generateTableRows(count);
-                updateTotalExpense();
-            });
-          
-            // Wages change
-            document.getElementById('wages').addEventListener('input', updateTotalExpense);
-          
-            // Shift change: update times
-            document.getElementById('shift').addEventListener('change', updateShiftTimes);
-          
-            // Preview button
-            document.getElementById('previewBtn').addEventListener('click', showPreview);
-          
-            // Save button
-            document.getElementById('saveBtn').addEventListener('click', saveAttendance);
-        }
-      
-        // Get global values for type, activity, vendor (Plant-specific)
+
+        document.getElementById('labourCount').addEventListener('input', () => { generateTableRows(document.getElementById('labourCount').value); updateTotalExpense(); });
+        document.getElementById('wages').addEventListener('input', updateTotalExpense);
+        document.getElementById('shift').addEventListener('change', updateShiftTimes);
+        document.getElementById('previewBtn').addEventListener('click', showPreview);
+        document.getElementById('saveBtn').addEventListener('click', saveAttendance);
+
         function getGlobalDetails() {
-            const labourTypeSelect = document.getElementById('labourType');
-            const labourTypeText = labourTypeSelect.options[labourTypeSelect.selectedIndex].text;
-            const labourType = labourTypeText !== '-- Select Type --' ? labourTypeText : '';
-          
-            const activitySelect = document.getElementById('activity');
-            const activityText = activitySelect.options[activitySelect.selectedIndex].text;
-            const activity = activityText !== '-- Select Activity --' ? activityText : '';
-          
-            const vendorSelect = document.getElementById('vendor');
-            const vendorText = vendorSelect.options[vendorSelect.selectedIndex].text;
-            const vendor = vendorText !== '-- Select Vendor --' ? vendorText : '';
-          
-            return { labourType, activity, vendor };
-        }
-      
-        // Get global in/out times
-        function getGlobalTimes() {
+            const getText = (id) => {
+                const sel = document.getElementById(id);
+                return sel.options[sel.selectedIndex]?.text || '';
+            };
             return {
-                inTime: document.getElementById('inTime').value || '--',
-                outTime: document.getElementById('outTime').value || '--'
+                labourType: getText('labourType'),
+                activity: getText('activity'),
+                vendor: getText('vendor')
             };
         }
-      
-        // Get global wage
-        function getGlobalWage() {
-            return parseFloat(document.getElementById('wages').value) || 0;
-        }
-      
-        // Save attendance (Plant-specific)
-        function saveAttendance() {
-            // Validate required fields
-            const labourCount = parseInt(document.getElementById('labourCount').value);
-            let valid = true;
-            let emptyNames = [];
-          
-            for (let i = 1; i <= labourCount; i++) {
-                const select = document.querySelector(`[data-index="${i}"].labour-name`);
-                if (!select || !select.value) {
-                    valid = false;
-                    emptyNames.push(i);
-                }
-            }
-          
-            if (!valid) {
-                alert(`Please select labour names for rows: ${emptyNames.join(', ')}`);
-                return;
-            }
-          
-            // Show preview with success message
-            showPreview();
-          
-            // Change preview title to success
-            document.querySelector('#previewSection h3').innerHTML = '<i class="fas fa-check-circle" style="color: #4caf50;"></i> Attendance Saved Successfully!';
-            document.querySelector('#previewSection p').innerHTML = '<i class="fas fa-check-circle" style="color: #4caf50;"></i> Attendance details have been saved to the database.';
-          
-            // In a real application, this would send data to a server
-            console.log("Plant Attendance data saved to database");
-        }
-      
-        // Get all attendance data for saving (Plant-specific)
-        function getAttendanceData() {
-            const { labourType, activity, vendor: vendorGlobal } = getGlobalDetails();
-            const { inTime, outTime } = getGlobalTimes();
-            const wage = getGlobalWage();
-            const data = {
-                type: 'plant',
-                company: document.getElementById('company').value,
-                branch: document.getElementById('branch').value,
-                shift: document.getElementById('shift').value,
-                date: document.getElementById('date').value,
-                inTime,
-                outTime,
-                labourType,
-                activity,
-                shiftIncharge: document.getElementById('shiftIncharge').value,
-                vendor: vendorGlobal,
-                labourCount: document.getElementById('labourCount').value,
-                wagesPerLabour: wage,
-                totalExpense: document.getElementById('totalExpense').textContent,
-                labourDetails: []
-            };
-          
-            const rows = document.querySelectorAll('#tableBody tr');
-            rows.forEach((row, index) => {
-                const select = row.querySelector('.labour-name');
-                const labourDetail = {
-                    srNo: index + 1,
-                    name: select ? select.value : '',
-                    type: labourType,
-                    activity,
-                    vendor: vendorGlobal,
-                    inTime,
-                    outTime,
-                    wage
-                };
-                data.labourDetails.push(labourDetail);
-            });
-          
-            return data;
-        }
-      
-        // Show preview (Plant-specific)
+
         function showPreview() {
-            // Update preview section with current values
+            // Update all preview fields...
             document.getElementById('previewCompany').textContent = document.getElementById('company').value;
             document.getElementById('previewBranch').textContent = document.getElementById('branch').value;
-          
-            const shiftSelect = document.getElementById('shift');
-            const shiftText = shiftSelect.options[shiftSelect.selectedIndex].text;
-            document.getElementById('previewShift').textContent = shiftText;
-          
-            // Format date
+            document.getElementById('previewShift').textContent = document.getElementById('shift').options[document.getElementById('shift').selectedIndex].text;
             const date = new Date(document.getElementById('date').value);
-            const options = { day: 'numeric', month: 'long', year: 'numeric' };
-            document.getElementById('previewDate').textContent = date.toLocaleDateString('en-IN', options);
-          
-            const { inTime, outTime } = getGlobalTimes();
-            document.getElementById('previewInTime').textContent = inTime;
-            document.getElementById('previewOutTime').textContent = outTime;
-          
-            const inchargeSelect = document.getElementById('shiftIncharge');
-            const inchargeText = inchargeSelect.options[inchargeSelect.selectedIndex].text;
-            document.getElementById('previewIncharge').textContent = inchargeText !== '-- Select In-Charges --' ? inchargeText : 'Not selected';
-          
+            document.getElementById('previewDate').textContent = date.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+            document.getElementById('previewInTime').textContent = document.getElementById('inTime').value;
+            document.getElementById('previewOutTime').textContent = document.getElementById('outTime').value;
+            document.getElementById('previewIncharge').textContent = document.getElementById('shiftIncharge').options[document.getElementById('shiftIncharge').selectedIndex].text;
             const { labourType, activity, vendor } = getGlobalDetails();
-            document.getElementById('previewLabourType').textContent = labourType || 'Not selected';
-            document.getElementById('previewActivity').textContent = activity || 'Not selected';
-            document.getElementById('previewVendor').textContent = vendor || 'Not selected';
-          
+            document.getElementById('previewLabourType').textContent = labourType;
+            document.getElementById('previewActivity').textContent = activity;
+            document.getElementById('previewVendor').textContent = vendor;
             document.getElementById('previewLabourCount').textContent = document.getElementById('labourCount').value;
-            const wage = getGlobalWage();
-            document.getElementById('previewWages').textContent = '₹ ' + wage.toLocaleString('en-IN');
+            document.getElementById('previewWages').textContent = '₹ ' + parseFloat(document.getElementById('wages').value || 0).toLocaleString('en-IN');
             document.getElementById('previewTotalExpense').textContent = '₹ ' + document.getElementById('totalExpense').textContent;
-          
-            // Update preview table
-            const previewTableBody = document.getElementById('previewTableBody');
-            previewTableBody.innerHTML = '';
-          
-            const rows = document.querySelectorAll('#tableBody tr');
-            rows.forEach((row, index) => {
-                const srNo = index + 1;
-                const select = row.querySelector('.labour-name');
-                const labourName = select ? select.value : '--';
-                const labourTypeVal = labourType || '--';
-                const activityVal = activity || '--';
-                const vendorVal = vendor || '--';
-              
-                const previewRow = document.createElement('tr');
-                previewRow.innerHTML = `
-                    <td>${srNo}</td>
-                    <td>${labourName}</td>
-                    <td>${labourTypeVal}</td>
-                    <td>${activityVal}</td>
-                    <td>${vendorVal}</td>
-                    <td>${inTime}</td>
-                    <td>${outTime}</td>
+
+            const previewTbody = document.getElementById('previewTableBody');
+            previewTbody.innerHTML = '';
+            document.querySelectorAll('#tableBody tr').forEach((row, i) => {
+                const name = row.querySelector('.labour-name').value || '--';
+                const wage = parseFloat(document.getElementById('wages').value || 0);
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${i+1}</td>
+                    <td>${name}</td>
+                    <td>${labourType}</td>
+                    <td>${activity}</td>
+                    <td>${vendor}</td>
+                    <td>${document.getElementById('inTime').value}</td>
+                    <td>${document.getElementById('outTime').value}</td>
                     <td>₹ ${wage.toLocaleString('en-IN')}</td>
                 `;
-                previewTableBody.appendChild(previewRow);
+                previewTbody.appendChild(tr);
             });
-          
-            // Show preview section
+
             document.getElementById('previewSection').style.display = 'block';
-          
-            // Scroll to preview
             document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
         }
+
+        function saveAttendance() {
+            const count = parseInt(document.getElementById('labourCount').value);
+            let missing = [];
+            for (let i = 1; i <= count; i++) {
+                if (!document.querySelector(`[data-index="${i}"]`).value) missing.push(i);
+            }
+            if (missing.length > 0) {
+                alert(`Please select labour name for row(s): ${missing.join(', ')}`);
+                return;
+            }
+            showPreview();
+            alert('Attendance saved successfully! (In real app, this would send data to server)');
+        }
+
+        /* ====================== QUARRY FUNCTIONS ====================== */
+        let daysInMonthQuarry = 0, yearQuarry = 0, monthQuarry = 0;
+
+        document.getElementById('loadBtnQuarry').addEventListener('click', loadQuarryAttendanceSheet);
+        document.getElementById('monthQuarry').addEventListener('change', loadQuarryAttendanceSheet);
+
+        function loadQuarryAttendanceSheet() {
+            const val = document.getElementById('monthQuarry').value;
+            if (!val) return alert("Select month");
+            [yearQuarry, monthQuarry] = val.split('-').map(Number);
+            monthQuarry--;
+            const lastDay = new Date(yearQuarry, monthQuarry + 1, 0);
+            daysInMonthQuarry = lastDay.getDate();
+            generateQuarryTable();
+            updateQuarrySummary();
+        }
+
+        function generateQuarryTable() {
+            const head = document.getElementById('tableHeadQuarry');
+            const body = document.getElementById('tableBodyQuarry');
+            head.innerHTML = '<tr><th rowspan="2">Sr No</th><th rowspan="2">Labour Name</th>' +
+                Array.from({length: daysInMonthQuarry}, (_, i) => {
+                    const d = new Date(yearQuarry, monthQuarry, i+1);
+                    const dayName = d.toLocaleDateString('en-US', {weekday:'short'});
+                    return `<th>${i+1}<br><small>${dayName}</small></th>`;
+                }).join('') + '</tr>';
+            
+            body.innerHTML = '';
+            labourNames.forEach((name, idx) => {
+                let row = `<tr><td>${idx+1}</td><td>${name}</td>`;
+                for (let d=1; d<=daysInMonthQuarry; d++) {
+                    const id = `quarry-${idx}-${d}`;
+                    row += `<td class="cell" id="${id}" onclick="handleQuarrySingleClick('${id}')" ondblclick="handleQuarryDoubleClick('${id}')"></td>`;
+                }
+                row += '</tr>';
+                body.innerHTML += row;
+            });
+        }
+
+        function handleQuarrySingleClick(cellId) {
+            const cell = document.getElementById(cellId);
+            const shift = document.getElementById('shiftFilterQuarry').value;
+            if (cell.classList.contains('present-day') || cell.classList.contains('present-night')) {
+                cell.classList.remove('present-day', 'present-night', 'absent');
+                cell.textContent = '';
+            } else if (cell.classList.contains('absent')) {
+                cell.classList.remove('absent');
+                cell.classList.add(shift === 'day' ? 'present-day' : 'present-night');
+                cell.textContent = shift === 'day' ? 'P' : 'N';
+            } else {
+                cell.classList.add(shift === 'day' ? 'present-day' : 'present-night');
+                cell.textContent = shift === 'day' ? 'P' : 'N';
+            }
+            updateQuarrySummary();
+        }
+
+        function handleQuarryDoubleClick(cellId) {
+            const cell = document.getElementById(cellId);
+            if (cell.classList.contains('absent')) {
+                cell.classList.remove('absent', 'present-day', 'present-night');
+                cell.textContent = '';
+            } else {
+                cell.classList.remove('present-day', 'present-night');
+                cell.classList.add('absent');
+                cell.textContent = 'A';
+            }
+            updateQuarrySummary();
+        }
+
+        function updateQuarrySummary() {
+            const tbody = document.querySelector('#summaryTableQuarry tbody');
+            tbody.innerHTML = '';
+            labourNames.forEach((name, idx) => {
+                let day = 0, night = 0;
+                for (let d=1; d<=daysInMonthQuarry; d++) {
+                    const cell = document.getElementById(`quarry-${idx}-${d}`);
+                    if (cell.classList.contains('present-day')) day++;
+                    if (cell.classList.contains('present-night')) night++;
+                }
+                const total = day + night;
+                const absent = daysInMonthQuarry - total;
+                tbody.innerHTML += `<tr>
+                    <td>${name}</td>
+                    <td>${day}</td>
+                    <td>${night}</td>
+                    <td>${total}</td>
+                    <td>${daysInMonthQuarry}</td>
+                    <td>${absent}</td>
+                </tr>`;
+            });
+        }
+
+        // Initial load - default to Plant
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('attendanceType').value = 'plant';
+            document.getElementById('plantContent').classList.add('active');
+            initPlant();
+        });
     </script>
 </body>
 </html>
