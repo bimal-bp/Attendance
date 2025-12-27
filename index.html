@@ -13,260 +13,151 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --success: #27ae60;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --gray: #95a5a6;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
         body {
             background-color: #f5f7fa;
             color: #333;
-            line-height: 1.6;
-            padding-bottom: 40px;
+            padding: 20px;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
         }
         
-        header {
-            background-color: var(--primary);
+        .header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a9d8f 100%);
             color: white;
-            padding: 20px 0;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
+            padding: 20px 30px;
+            text-align: center;
         }
         
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        h1 {
+        .header h1 {
             font-size: 28px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 5px;
         }
         
-        h1 i {
-            color: var(--secondary);
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
         }
         
-        .header-actions {
-            display: flex;
-            gap: 15px;
+        .content {
+            padding: 30px;
         }
         
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
-        }
-        
-        .btn-success {
-            background-color: var(--success);
-            color: white;
-        }
-        
-        .btn-success:hover {
-            background-color: #219653;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background-color: var(--gray);
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #7f8c8d;
-            transform: translateY(-2px);
-        }
-        
-        .btn-danger {
-            background-color: var(--accent);
-            color: white;
-        }
-        
-        .btn-danger:hover {
-            background-color: #c0392b;
-            transform: translateY(-2px);
+        .section {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eaeaea;
         }
         
         .section-title {
             font-size: 20px;
+            color: #2a9d8f;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary);
-            color: var(--primary);
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eaeaea;
             display: flex;
             align-items: center;
-            gap: 10px;
         }
         
         .section-title i {
-            color: var(--secondary);
-        }
-        
-        .control-section {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-            position: sticky;
-            top: 10px;
-            z-index: 100;
+            margin-right: 10px;
+            background-color: #2a9d8f;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .form-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 20px;
+            margin: 0 -15px;
         }
         
         .form-group {
             flex: 1;
-            min-width: 200px;
+            min-width: 250px;
+            padding: 0 15px;
+            margin-bottom: 20px;
         }
         
-        .form-group label {
+        label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--primary);
+            color: #555;
         }
         
-        .form-control {
+        input, select, textarea {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
-            transition: border 0.3s;
-        }
-        
-        .form-control:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-        }
-        
-        .category-options {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .category-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-        
-        .category-option input[type="radio"] {
-            display: none;
-        }
-        
-        .category-label {
-            padding: 10px 20px;
-            background-color: var(--light);
-            border-radius: 5px;
-            border: 2px solid transparent;
             transition: all 0.3s;
-            font-weight: 600;
         }
         
-        .category-option input[type="radio"]:checked + .category-label {
-            background-color: var(--secondary);
-            color: white;
-            border-color: var(--secondary);
+        input:focus, select:focus, textarea:focus {
+            border-color: #2a9d8f;
+            box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.2);
+            outline: none;
         }
         
-        .inline-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .inline-group .form-control {
-            max-width: 150px;
-        }
-        
-        .calculation-box {
-            background-color: #f8f9fa;
+        .file-upload {
+            border: 2px dashed #ccc;
             padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--success);
-            margin-top: 20px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
         
-        .calculation-row {
-            display: flex;
-            justify-content: space-between;
+        .file-upload:hover {
+            border-color: #2a9d8f;
+            background-color: rgba(42, 157, 143, 0.05);
+        }
+        
+        .file-upload i {
+            font-size: 24px;
+            color: #777;
             margin-bottom: 10px;
         }
         
-        .calculation-row:last-child {
-            margin-bottom: 0;
-            font-weight: bold;
-            font-size: 18px;
-            color: var(--primary);
-            padding-top: 10px;
-            border-top: 1px solid #ddd;
+        .expense-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #2a9d8f;
         }
         
-        .attendance-table-section {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-            overflow-x: auto;
+        .expense-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2a9d8f;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         
         th {
-            background-color: var(--primary);
-            color: white;
+            background-color: #f2f2f2;
             padding: 15px;
             text-align: left;
             font-weight: 600;
+            color: #555;
+            border-bottom: 2px solid #ddd;
         }
         
         td {
@@ -278,752 +169,551 @@
             background-color: #f9f9f9;
         }
         
-        .present-checkbox {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eaeaea;
         }
         
-        .remarks-section {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
-        
-        textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
+        .btn {
+            padding: 14px 30px;
+            border: none;
             border-radius: 5px;
             font-size: 16px;
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .file-upload {
-            margin-top: 20px;
-        }
-        
-        .file-upload-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 20px;
-            background-color: var(--light);
-            border-radius: 5px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
         
-        .file-upload-label:hover {
-            background-color: #dfe6e9;
+        .btn-primary {
+            background-color: #2a9d8f;
+            color: white;
         }
         
-        .file-upload input {
+        .btn-primary:hover {
+            background-color: #21867a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        .preview-section {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
             display: none;
         }
         
-        .footer-actions {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
+        .preview-section h3 {
+            color: #1a5f7a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
         }
         
-        .message {
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .preview-item {
+            background-color: white;
             padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
-            display: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
-        .mobile-label {
-            display: none;
+        .preview-label {
             font-weight: 600;
-            color: var(--primary);
+            color: #555;
             margin-bottom: 5px;
         }
         
+        .preview-value {
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .preview-table {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        
+        .preview-table table {
+            min-width: 800px;
+        }
+        
         @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-            }
-            
             .form-group {
                 min-width: 100%;
             }
             
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            
-            .footer-actions {
+            .action-buttons {
                 flex-direction: column;
             }
             
             .btn {
                 width: 100%;
-                justify-content: center;
             }
-            
-            .category-options {
-                flex-direction: column;
-            }
-            
-            .mobile-label {
-                display: block;
-            }
-            
-            table {
-                display: block;
-            }
-            
-            thead {
-                display: none;
-            }
-            
-            tr {
-                display: block;
-                margin-bottom: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                padding: 15px;
-            }
-            
-            td {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 0;
-                border-bottom: 1px solid #eee;
-            }
-            
-            td:last-child {
-                border-bottom: none;
-            }
-            
-            td::before {
-                content: attr(data-label);
-                font-weight: 600;
-                color: var(--primary);
-            }
-        }
-        
-        .required::after {
-            content: " *";
-            color: var(--accent);
-        }
-        
-        .empty-table-message {
-            text-align: center;
-            padding: 40px;
-            color: var(--gray);
-            font-style: italic;
-        }
-        
-        .no-labour-message {
-            background-color: #fff3cd;
-            color: #856404;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ffeaa7;
-            text-align: center;
-            margin-top: 20px;
-            display: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1><i class="fas fa-clipboard-check"></i> Labour Attendance Entry System</h1>
-                <div class="header-actions">
-                    <button class="btn btn-secondary" id="viewPreviousBtn">
-                        <i class="fas fa-history"></i> View Previous
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-    
     <div class="container">
-        <!-- Success/Error Message -->
-        <div class="message" id="message"></div>
+        <div class="header">
+            <h1><i class="fas fa-user-clock"></i> Labour Attendance Entry System</h1>
+            <p>SGX Minerals Private Limited - Anakapalli Branch</p>
+        </div>
         
-        <!-- Top Control Section -->
-        <section class="control-section">
-            <h2 class="section-title"><i class="fas fa-cogs"></i> Attendance Controls</h2>
-            
-            <!-- Basic Details -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="company" class="required">Company</label>
-                    <select id="company" class="form-control">
-                        <option value="">Select Company</option>
-                        <option value="ABC Construction">ABC Construction</option>
-                        <option value="XYZ Builders">XYZ Builders</option>
-                        <option value="Infra Corp">Infra Corp</option>
-                        <option value="Metro Projects">Metro Projects</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="branch" class="required">Branch / Site</label>
-                    <select id="branch" class="form-control">
-                        <option value="">Select Branch/Site</option>
-                        <option value="Site A - Downtown">Site A - Downtown</option>
-                        <option value="Site B - Suburb">Site B - Suburb</option>
-                        <option value="Site C - Industrial Area">Site C - Industrial Area</option>
-                        <option value="Head Office">Head Office</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date" class="required">Date</label>
-                    <input type="date" id="date" class="form-control" value="">
-                </div>
-                
-                <div class="form-group">
-                    <label for="shift" class="required">Shift</label>
-                    <select id="shift" class="form-control">
-                        <option value="Day">Day</option>
-                        <option value="Night">Night</option>
-                        <option value="General">General</option>
-                    </select>
-                </div>
-            </div>
-            
-            <!-- Labour Category -->
-            <div class="form-group">
-                <label class="required">Labour Category</label>
-                <div class="category-options">
-                    <div class="category-option">
-                        <input type="radio" id="skilled" name="labourCategory" value="Skilled">
-                        <label for="skilled" class="category-label">Skilled</label>
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-building"></i> Company & Shift Details</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" value="SGX Minerals Private Limited" readonly>
                     </div>
-                    <div class="category-option">
-                        <input type="radio" id="unskilled" name="labourCategory" value="Unskilled">
-                        <label for="unskilled" class="category-label">Unskilled</label>
+                    <div class="form-group">
+                        <label for="branch">Branch</label>
+                        <input type="text" id="branch" value="SGX-Anakapalli" readonly>
                     </div>
-                    <div class="category-option">
-                        <input type="radio" id="otherCategory" name="labourCategory" value="Other">
-                        <label for="otherCategory" class="category-label">Other</label>
+                    <div class="form-group">
+                        <label for="shift">Shift Time</label>
+                        <select id="shift">
+                            <option value="">-- Select Shift --</option>
+                            <option value="morning">Morning Shift (6:00 AM - 2:00 PM)</option>
+                            <option value="general" selected>General Shift (9:00 AM - 5:00 PM)</option>
+                            <option value="night">Night Shift (10:00 PM - 6:00 AM)</option>
+                        </select>
                     </div>
-                </div>
-                
-                <div class="inline-group">
-                    <label for="labourCount" class="required">Number of Labour (NMR count)</label>
-                    <input type="number" id="labourCount" class="form-control" min="1" max="100" value="5">
-                    <button class="btn btn-primary" id="generateTableBtn">Generate Table</button>
-                </div>
-            </div>
-            
-            <!-- Purpose of Work -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="purpose" class="required">Purpose of Work</label>
-                    <select id="purpose" class="form-control">
-                        <option value="Development">Development</option>
-                        <option value="Production">Production</option>
-                        <option value="Maintenance">Maintenance</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group" id="purposeRemarkContainer" style="display: none;">
-                    <label for="purposeRemark">Remark (for Other)</label>
-                    <input type="text" id="purposeRemark" class="form-control" placeholder="Enter purpose details">
-                </div>
-            </div>
-            
-            <!-- Time Details -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="inTime" class="required">In Time</label>
-                    <input type="time" id="inTime" class="form-control" value="09:00">
-                </div>
-                
-                <div class="form-group">
-                    <label for="outTime" class="required">Out Time</label>
-                    <input type="time" id="outTime" class="form-control" value="18:00">
-                </div>
-                
-                <div class="form-group">
-                    <label>Total Working Hours</label>
-                    <div class="form-control" id="totalHours" style="background-color: #f8f9fa; font-weight: bold;">
-                        9.00 hours
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" value="2025-12-27">
                     </div>
                 </div>
             </div>
             
-            <!-- Wages Section -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="wageType" class="required">Wage Type</label>
-                    <select id="wageType" class="form-control">
-                        <option value="Per Day">Per Day</option>
-                        <option value="Per Hour">Per Hour</option>
-                    </select>
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-users"></i> Labour & Expense Details</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="labourCount">No Of Labour</label>
+                        <input type="number" id="labourCount" min="1" max="50" value="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="wages">Wages (₹)</label>
+                        <input type="text" id="wages" placeholder="Auto-calculated" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Expense (₹)</label>
+                        <div class="expense-box">
+                            <div class="expense-value">₹ <span id="totalExpense">0</span></div>
+                            <p>Auto-calculated based on labour entries</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="wageAmount" class="required">Wage Amount (₹)</label>
-                    <input type="number" id="wageAmount" class="form-control" min="100" step="50" value="500">
-                </div>
-                
-                <div class="form-group">
-                    <label>Total Wages</label>
-                    <div class="form-control" id="totalWages" style="background-color: #f8f9fa; font-weight: bold;">
-                        ₹ 2,500
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="shiftIncharge">Shift In-Charges</label>
+                        <select id="shiftIncharge">
+                            <option value="">-- Select In-Charges --</option>
+                            <option value="john">John Smith</option>
+                            <option value="sarah">Sarah Johnson</option>
+                            <option value="mike">Mike Williams</option>
+                            <option value="priya">Priya Patel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inTime">In Time</label>
+                        <input type="time" id="inTime" value="09:00">
+                    </div>
+                    <div class="form-group">
+                        <label for="outTime">Out Time</label>
+                        <input type="time" id="outTime" value="17:00">
                     </div>
                 </div>
             </div>
             
-            <!-- Calculation Summary -->
-            <div class="calculation-box">
-                <div class="calculation-row">
-                    <span>Labour Count:</span>
-                    <span id="summaryLabourCount">5</span>
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-file-upload"></i> File & Remarks</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Upload Physical File</label>
+                        <div class="file-upload" id="fileUpload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Choose File – No file chosen</p>
+                            <input type="file" id="fileInput" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="remarks">Remarks</label>
+                        <textarea id="remarks" rows="4" placeholder="Enter any remarks or notes here..."></textarea>
+                    </div>
                 </div>
-                <div class="calculation-row">
-                    <span>Working Hours:</span>
-                    <span id="summaryWorkingHours">9.00 hours</span>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Labour Attendance Table</h2>
+                <div class="table-container">
+                    <table id="labourTable">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Labour Name</th>
+                                <th>Labour Type</th>
+                                <th>Activity</th>
+                                <th>Vendor</th>
+                                <th>In Time</th>
+                                <th>Out Time</th>
+                                <th>Wages (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Rows will be generated here -->
+                        </tbody>
+                    </table>
                 </div>
-                <div class="calculation-row">
-                    <span>Total Wages:</span>
-                    <span id="summaryTotalWages">₹ 2,500</span>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Attendance Entry Table -->
-        <section class="attendance-table-section">
-            <h2 class="section-title"><i class="fas fa-users"></i> Labour Attendance Entry</h2>
-            
-            <div class="no-labour-message" id="noLabourMessage">
-                <i class="fas fa-info-circle"></i> Please select a labour category and number of labour above, then click "Generate Table" to create the attendance entry table.
             </div>
             
-            <div id="attendanceTableContainer">
-                <!-- Table will be generated here by JavaScript -->
-            </div>
-        </section>
-        
-        <!-- Additional Fields -->
-        <section class="remarks-section">
-            <h2 class="section-title"><i class="fas fa-paperclip"></i> Additional Information</h2>
-            
-            <div class="form-group">
-                <label for="remarks">Remarks</label>
-                <textarea id="remarks" placeholder="Enter any additional remarks or notes here..."></textarea>
-            </div>
-            
-            <div class="file-upload">
-                <label class="file-upload-label">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <span>Upload Attendance Proof (Image/PDF)</span>
-                    <input type="file" id="attendanceProof" accept=".jpg,.jpeg,.png,.pdf">
-                </label>
-                <div id="fileName" style="margin-top: 10px; font-style: italic; color: var(--gray);"></div>
-            </div>
-        </section>
-        
-        <!-- Action Buttons -->
-        <div class="footer-actions">
-            <div>
-                <button class="btn btn-success" id="saveBtn">
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="previewBtn">
+                    <i class="fas fa-eye"></i> Preview Attendance
+                </button>
+                <button class="btn btn-secondary" id="saveBtn">
                     <i class="fas fa-save"></i> Save Attendance
                 </button>
-                <button class="btn btn-primary" id="saveNewBtn">
-                    <i class="fas fa-plus-circle"></i> Save & New Entry
-                </button>
             </div>
             
-            <div>
-                <button class="btn btn-secondary" id="resetBtn">
-                    <i class="fas fa-redo"></i> Reset
-                </button>
-                <button class="btn btn-danger" id="cancelBtn">
-                    <i class="fas fa-times"></i> Cancel
-                </button>
+            <div class="preview-section" id="previewSection">
+                <h3><i class="fas fa-file-alt"></i> Attendance Preview</h3>
+                <div class="preview-grid">
+                    <div class="preview-item">
+                        <div class="preview-label">Company</div>
+                        <div class="preview-value" id="previewCompany">SGX Minerals Private Limited</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Branch</div>
+                        <div class="preview-value" id="previewBranch">SGX-Anakapalli</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Shift</div>
+                        <div class="preview-value" id="previewShift">General Shift (9:00 AM - 5:00 PM)</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Date</div>
+                        <div class="preview-value" id="previewDate">27 December 2025</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Shift In-Charge</div>
+                        <div class="preview-value" id="previewIncharge">John Smith</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Total Labour</div>
+                        <div class="preview-value" id="previewLabourCount">5</div>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-label">Total Expense</div>
+                        <div class="preview-value" id="previewTotalExpense">₹ 0</div>
+                    </div>
+                </div>
+                
+                <div class="preview-table">
+                    <h4 style="margin-top: 25px; margin-bottom: 15px;">Labour Details</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Labour Name</th>
+                                <th>Labour Type</th>
+                                <th>Activity</th>
+                                <th>Vendor</th>
+                                <th>In Time</th>
+                                <th>Out Time</th>
+                                <th>Wages (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="previewTableBody">
+                            <!-- Preview rows will be added here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Labour data for dropdowns
+        const labourNames = [
+            "Rahul Sharma", "Amit Patel", "Vikram Singh", "Rajesh Kumar", "Suresh Reddy",
+            "Anil Gupta", "Manoj Tiwari", "Deepak Verma", "Kiran Yadav", "Sanjay Mishra"
+        ];
+        
+        const labourTypes = ["Skilled", "Unskilled", "Other"];
+        const activities = ["Development", "Production", "Other"];
+        const vendors = ["ABC Contractors", "XYZ Suppliers", "MNO Services", "PQR Enterprises", "STU Vendors"];
+        
+        // Initialize table with default 5 rows
         document.addEventListener('DOMContentLoaded', function() {
-            // Set today's date as default
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('date').value = today;
-            
-            // Initialize the table with default values
-            generateAttendanceTable();
-            
-            // Event Listeners
-            document.getElementById('generateTableBtn').addEventListener('click', generateAttendanceTable);
-            document.getElementById('labourCount').addEventListener('change', updateCalculations);
-            document.getElementById('labourCount').addEventListener('input', updateCalculations);
-            document.getElementById('inTime').addEventListener('change', updateWorkingHours);
-            document.getElementById('outTime').addEventListener('change', updateWorkingHours);
-            document.getElementById('wageAmount').addEventListener('input', updateCalculations);
-            document.getElementById('wageType').addEventListener('change', updateCalculations);
-            document.getElementById('purpose').addEventListener('change', function() {
-                const remarkContainer = document.getElementById('purposeRemarkContainer');
-                remarkContainer.style.display = this.value === 'Other' ? 'block' : 'none';
-            });
-            
-            // Labour category selection
-            document.querySelectorAll('input[name="labourCategory"]').forEach(radio => {
-                radio.addEventListener('change', function() {
-                    updateCalculations();
-                });
-            });
-            
-            // File upload display
-            document.getElementById('attendanceProof').addEventListener('change', function() {
-                const fileName = this.files.length > 0 ? this.files[0].name : '';
-                document.getElementById('fileName').textContent = fileName ? `Selected file: ${fileName}` : '';
-            });
-            
-            // Button actions
-            document.getElementById('saveBtn').addEventListener('click', saveAttendance);
-            document.getElementById('saveNewBtn').addEventListener('click', saveAndNew);
-            document.getElementById('resetBtn').addEventListener('click', resetForm);
-            document.getElementById('cancelBtn').addEventListener('click', function() {
-                if (confirm('Are you sure you want to cancel? All unsaved data will be lost.')) {
-                    resetForm();
-                }
-            });
-            document.getElementById('viewPreviousBtn').addEventListener('click', function() {
-                showMessage('This feature would show previous attendance records in a real application.', 'info');
-            });
-            
-            // Initial calculations
-            updateWorkingHours();
-            updateCalculations();
+            generateTableRows(5);
+            setupEventListeners();
+            updateTotalExpense();
         });
         
-        // Generate the attendance table based on labour count
-        function generateAttendanceTable() {
-            const labourCount = parseInt(document.getElementById('labourCount').value) || 0;
-            const labourCategory = document.querySelector('input[name="labourCategory"]:checked');
-            const categoryValue = labourCategory ? labourCategory.value : 'Skilled';
-            const tableContainer = document.getElementById('attendanceTableContainer');
-            const noLabourMessage = document.getElementById('noLabourMessage');
+        // Generate table rows based on labour count
+        function generateTableRows(count) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
             
-            if (labourCount <= 0 || !labourCategory) {
-                tableContainer.innerHTML = '';
-                noLabourMessage.style.display = 'block';
-                return;
-            }
-            
-            noLabourMessage.style.display = 'none';
-            
-            // Vendor options (would typically come from database)
-            const vendorOptions = [
-                'Select Vendor',
-                'Vendor A',
-                'Vendor B',
-                'Vendor C',
-                'Direct Labour'
-            ];
-            
-            let tableHTML = `
-            <div style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Sr No</th>
-                            <th>Labour Name</th>
-                            <th>Labour Type</th>
-                            <th>Vendor</th>
-                            <th>Present</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-            
-            for (let i = 1; i <= labourCount; i++) {
-                tableHTML += `
-                <tr>
-                    <td data-label="Sr No">${i}</td>
-                    <td data-label="Labour Name">
-                        <input type="text" class="form-control labour-name" placeholder="Enter labour name" style="width: 100%;">
-                    </td>
-                    <td data-label="Labour Type">${categoryValue}</td>
-                    <td data-label="Vendor">
-                        <select class="form-control labour-vendor">
-                            ${vendorOptions.map(option => 
-                                `<option value="${option}">${option}</option>`
-                            ).join('')}
+            for (let i = 1; i <= count; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${i}</td>
+                    <td>
+                        <select class="labour-name" data-index="${i}">
+                            <option value="">-- Select --</option>
+                            ${labourNames.map(name => `<option value="${name}">${name}</option>`).join('')}
                         </select>
                     </td>
-                    <td data-label="Present">
-                        <input type="checkbox" class="present-checkbox" checked>
+                    <td>
+                        <select class="labour-type" data-index="${i}">
+                            <option value="">-- Select --</option>
+                            ${labourTypes.map(type => `<option value="${type}">${type}</option>`).join('')}
+                        </select>
                     </td>
-                </tr>
+                    <td>
+                        <select class="activity" data-index="${i}">
+                            <option value="">-- Select --</option>
+                            ${activities.map(activity => `<option value="${activity}">${activity}</option>`).join('')}
+                        </select>
+                    </td>
+                    <td>
+                        <select class="vendor" data-index="${i}">
+                            <option value="">-- Select Vendor --</option>
+                            ${vendors.map(vendor => `<option value="${vendor}">${vendor}</option>`).join('')}
+                        </select>
+                    </td>
+                    <td>
+                        <input type="time" class="in-time" data-index="${i}" value="09:00">
+                    </td>
+                    <td>
+                        <input type="time" class="out-time" data-index="${i}" value="17:00">
+                    </td>
+                    <td>
+                        <input type="number" class="wage" data-index="${i}" placeholder="0" min="0" step="10">
+                    </td>
                 `;
+                tableBody.appendChild(row);
             }
             
-            tableHTML += `
-                    </tbody>
-                </table>
-            </div>
-            `;
-            
-            tableContainer.innerHTML = tableHTML;
-            
-            // Add event listeners to checkboxes to update present count
-            document.querySelectorAll('.present-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', updatePresentCount);
+            // Add event listeners to new wage inputs
+            document.querySelectorAll('.wage').forEach(input => {
+                input.addEventListener('input', updateTotalExpense);
             });
             
-            updatePresentCount();
+            // Add event listeners to dropdowns
+            document.querySelectorAll('.labour-name').forEach(select => {
+                select.addEventListener('change', function() {
+                    if(this.value) {
+                        // Auto-populate other fields based on labour name
+                        const index = this.dataset.index;
+                        autoFillLabourDetails(index, this.value);
+                    }
+                });
+            });
         }
         
-        // Calculate working hours
-        function updateWorkingHours() {
-            const inTime = document.getElementById('inTime').value;
-            const outTime = document.getElementById('outTime').value;
+        // Auto-fill labour details based on name selection
+        function autoFillLabourDetails(index, labourName) {
+            // In a real application, this would fetch from a database
+            // For demo, we'll use simple mapping
+            const row = document.querySelector(`tr:nth-child(${index})`);
             
-            if (!inTime || !outTime) {
-                document.getElementById('totalHours').textContent = '0.00 hours';
-                return;
-            }
-            
-            const inDate = new Date(`2000-01-01T${inTime}`);
-            const outDate = new Date(`2000-01-01T${outTime}`);
-            
-            // Handle overnight shift
-            if (outDate < inDate) {
-                outDate.setDate(outDate.getDate() + 1);
-            }
-            
-            const diffMs = outDate - inDate;
-            const diffHours = diffMs / (1000 * 60 * 60);
-            
-            document.getElementById('totalHours').textContent = diffHours.toFixed(2) + ' hours';
-            updateCalculations();
-        }
-        
-        // Update all calculations
-        function updateCalculations() {
-            const labourCount = parseInt(document.getElementById('labourCount').value) || 0;
-            const wageAmount = parseFloat(document.getElementById('wageAmount').value) || 0;
-            const wageType = document.getElementById('wageType').value;
-            const totalHours = parseFloat(document.getElementById('totalHours').textContent) || 0;
-            
-            // Calculate total wages based on wage type
-            let totalWages = 0;
-            
-            if (wageType === 'Per Day') {
-                totalWages = labourCount * wageAmount;
-            } else if (wageType === 'Per Hour') {
-                totalWages = labourCount * wageAmount * totalHours;
-            }
-            
-            // Update total wages display
-            document.getElementById('totalWages').textContent = '₹ ' + totalWages.toLocaleString('en-IN');
-            
-            // Update summary section
-            document.getElementById('summaryLabourCount').textContent = labourCount;
-            document.getElementById('summaryWorkingHours').textContent = document.getElementById('totalHours').textContent;
-            document.getElementById('summaryTotalWages').textContent = '₹ ' + totalWages.toLocaleString('en-IN');
-            
-            // Update present count if table exists
-            updatePresentCount();
-        }
-        
-        // Update present count summary
-        function updatePresentCount() {
-            const checkboxes = document.querySelectorAll('.present-checkbox');
-            const presentCount = Array.from(checkboxes).filter(cb => cb.checked).length;
-            const labourCount = parseInt(document.getElementById('labourCount').value) || 0;
-            
-            // In a real application, you might want to display this somewhere
-            console.log(`Present: ${presentCount} / ${labourCount}`);
-        }
-        
-        // Save attendance
-        function saveAttendance() {
-            // Validate required fields
-            if (!validateForm()) {
-                return;
-            }
-            
-            // Gather all data
-            const attendanceData = {
-                company: document.getElementById('company').value,
-                branch: document.getElementById('branch').value,
-                date: document.getElementById('date').value,
-                shift: document.getElementById('shift').value,
-                labourCategory: document.querySelector('input[name="labourCategory"]:checked').value,
-                labourCount: parseInt(document.getElementById('labourCount').value),
-                purpose: document.getElementById('purpose').value,
-                purposeRemark: document.getElementById('purposeRemark').value,
-                inTime: document.getElementById('inTime').value,
-                outTime: document.getElementById('outTime').value,
-                totalHours: document.getElementById('totalHours').textContent,
-                wageType: document.getElementById('wageType').value,
-                wageAmount: parseFloat(document.getElementById('wageAmount').value),
-                totalWages: document.getElementById('totalWages').textContent,
-                remarks: document.getElementById('remarks').value,
-                attendanceProof: document.getElementById('attendanceProof').files.length > 0 
-                    ? document.getElementById('attendanceProof').files[0].name 
-                    : null,
-                labourEntries: []
+            // Map labour names to types for demo
+            const typeMap = {
+                "Rahul Sharma": "Skilled",
+                "Amit Patel": "Skilled", 
+                "Vikram Singh": "Skilled",
+                "Rajesh Kumar": "Unskilled",
+                "Suresh Reddy": "Unskilled",
+                "Anil Gupta": "Skilled",
+                "Manoj Tiwari": "Other",
+                "Deepak Verma": "Skilled",
+                "Kiran Yadav": "Unskilled",
+                "Sanjay Mishra": "Other"
             };
             
-            // Gather labour entries from table
-            const labourNames = document.querySelectorAll('.labour-name');
-            const labourVendors = document.querySelectorAll('.labour-vendor');
-            const presentCheckboxes = document.querySelectorAll('.present-checkbox');
+            // Map labour names to activities for demo
+            const activityMap = {
+                "Rahul Sharma": "Development",
+                "Amit Patel": "Production", 
+                "Vikram Singh": "Development",
+                "Rajesh Kumar": "Production",
+                "Suresh Reddy": "Production",
+                "Anil Gupta": "Development",
+                "Manoj Tiwari": "Other",
+                "Deepak Verma": "Production",
+                "Kiran Yadav": "Development",
+                "Sanjay Mishra": "Other"
+            };
             
-            for (let i = 0; i < labourNames.length; i++) {
-                attendanceData.labourEntries.push({
-                    srNo: i + 1,
-                    name: labourNames[i].value || `Labour ${i+1}`,
-                    type: attendanceData.labourCategory,
-                    vendor: labourVendors[i].value,
-                    present: presentCheckboxes[i].checked
-                });
+            // Map labour names to vendors for demo
+            const vendorMap = {
+                "Rahul Sharma": "ABC Contractors",
+                "Amit Patel": "XYZ Suppliers", 
+                "Vikram Singh": "MNO Services",
+                "Rajesh Kumar": "PQR Enterprises",
+                "Suresh Reddy": "STU Vendors",
+                "Anil Gupta": "ABC Contractors",
+                "Manoj Tiwari": "XYZ Suppliers",
+                "Deepak Verma": "MNO Services",
+                "Kiran Yadav": "PQR Enterprises",
+                "Sanjay Mishra": "STU Vendors"
+            };
+            
+            // Map labour names to wages for demo
+            const wageMap = {
+                "Rahul Sharma": 1200,
+                "Amit Patel": 1100, 
+                "Vikram Singh": 1250,
+                "Rajesh Kumar": 800,
+                "Suresh Reddy": 850,
+                "Anil Gupta": 1150,
+                "Manoj Tiwari": 900,
+                "Deepak Verma": 1050,
+                "Kiran Yadav": 750,
+                "Sanjay Mishra": 950
+            };
+            
+            // Set values
+            if (row) {
+                row.querySelector('.labour-type').value = typeMap[labourName] || "";
+                row.querySelector('.activity').value = activityMap[labourName] || "";
+                row.querySelector('.vendor').value = vendorMap[labourName] || "";
+                row.querySelector('.wage').value = wageMap[labourName] || "";
             }
             
-            // In a real application, you would send this data to a server
-            console.log('Attendance Data:', attendanceData);
-            
-            // Show success message
-            showMessage('Attendance saved successfully!', 'success');
-            
-            // In a real application, you might redirect or clear the form
-            // For demo, we'll just log the data
-            return attendanceData;
+            // Update total expense
+            updateTotalExpense();
         }
         
-        // Save and create new entry
-        function saveAndNew() {
-            const saved = saveAttendance();
-            if (saved) {
-                // Reset form but keep some values
-                document.getElementById('company').value = '';
-                document.getElementById('branch').value = '';
-                document.getElementById('shift').value = 'Day';
-                document.getElementById('labourCount').value = '5';
-                document.getElementById('purpose').value = 'Development';
-                document.getElementById('purposeRemarkContainer').style.display = 'none';
-                document.getElementById('remarks').value = '';
-                document.getElementById('fileName').textContent = '';
-                
-                // Generate new table
-                generateAttendanceTable();
-                updateCalculations();
-                
-                showMessage('Attendance saved. Ready for new entry!', 'success');
-            }
-        }
-        
-        // Reset form
-        function resetForm() {
-            if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
-                document.getElementById('company').value = '';
-                document.getElementById('branch').value = '';
-                document.getElementById('date').value = new Date().toISOString().split('T')[0];
-                document.getElementById('shift').value = 'Day';
-                
-                // Reset category selection
-                document.getElementById('skilled').checked = true;
-                
-                document.getElementById('labourCount').value = '5';
-                document.getElementById('purpose').value = 'Development';
-                document.getElementById('purposeRemarkContainer').style.display = 'none';
-                document.getElementById('purposeRemark').value = '';
-                document.getElementById('inTime').value = '09:00';
-                document.getElementById('outTime').value = '18:00';
-                document.getElementById('wageType').value = 'Per Day';
-                document.getElementById('wageAmount').value = '500';
-                document.getElementById('remarks').value = '';
-                document.getElementById('attendanceProof').value = '';
-                document.getElementById('fileName').textContent = '';
-                
-                // Regenerate table
-                generateAttendanceTable();
-                updateWorkingHours();
-                updateCalculations();
-                
-                showMessage('Form has been reset.', 'info');
-            }
-        }
-        
-        // Validate form
-        function validateForm() {
-            const requiredFields = [
-                { id: 'company', name: 'Company' },
-                { id: 'branch', name: 'Branch/Site' },
-                { id: 'date', name: 'Date' },
-                { id: 'labourCount', name: 'Number of Labour' },
-                { id: 'inTime', name: 'In Time' },
-                { id: 'outTime', name: 'Out Time' },
-                { id: 'wageAmount', name: 'Wage Amount' }
-            ];
+        // Update total expense based on wage inputs
+        function updateTotalExpense() {
+            let total = 0;
+            document.querySelectorAll('.wage').forEach(input => {
+                total += parseFloat(input.value) || 0;
+            });
             
-            // Check labour category
-            const labourCategory = document.querySelector('input[name="labourCategory"]:checked');
-            if (!labourCategory) {
-                showMessage('Please select a Labour Category.', 'error');
-                return false;
-            }
+            document.getElementById('totalExpense').textContent = total.toLocaleString('en-IN');
             
-            // Check other required fields
-            for (const field of requiredFields) {
-                const element = document.getElementById(field.id);
-                if (!element.value.trim()) {
-                    showMessage(`Please fill in the ${field.name} field.`, 'error');
-                    element.focus();
-                    return false;
-                }
-            }
-            
-            // Check labour count is valid
+            // Update wages field with average
             const labourCount = parseInt(document.getElementById('labourCount').value);
-            if (isNaN(labourCount) || labourCount <= 0) {
-                showMessage('Please enter a valid number of labour (greater than 0).', 'error');
-                document.getElementById('labourCount').focus();
-                return false;
-            }
-            
-            return true;
+            const averageWage = labourCount > 0 ? Math.round(total / labourCount) : 0;
+            document.getElementById('wages').value = averageWage;
         }
         
-        // Show message
-        function showMessage(text, type) {
-            const messageDiv = document.getElementById('message');
-            messageDiv.textContent = text;
-            messageDiv.className = `message ${type}`;
-            messageDiv.style.display = 'block';
+        // Setup event listeners
+        function setupEventListeners() {
+            // Labour count change
+            document.getElementById('labourCount').addEventListener('change', function() {
+                const count = parseInt(this.value) || 1;
+                generateTableRows(count);
+            });
             
-            // Auto-hide success messages after 5 seconds
-            if (type === 'success' || type === 'info') {
-                setTimeout(() => {
-                    messageDiv.style.display = 'none';
-                }, 5000);
-            }
+            // File upload
+            document.getElementById('fileUpload').addEventListener('click', function() {
+                document.getElementById('fileInput').click();
+            });
+            
+            document.getElementById('fileInput').addEventListener('change', function() {
+                const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+                document.querySelector('#fileUpload p').textContent = fileName;
+            });
+            
+            // Preview button
+            document.getElementById('previewBtn').addEventListener('click', showPreview);
+            
+            // Save button
+            document.getElementById('saveBtn').addEventListener('click', function() {
+                alert('Attendance saved successfully!');
+                // In a real application, this would send data to a server
+            });
+        }
+        
+        // Show preview
+        function showPreview() {
+            // Update preview section with current values
+            document.getElementById('previewCompany').textContent = document.getElementById('company').value;
+            document.getElementById('previewBranch').textContent = document.getElementById('branch').value;
+            
+            const shiftSelect = document.getElementById('shift');
+            const shiftText = shiftSelect.options[shiftSelect.selectedIndex].text;
+            document.getElementById('previewShift').textContent = shiftText;
+            
+            // Format date
+            const date = new Date(document.getElementById('date').value);
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            document.getElementById('previewDate').textContent = date.toLocaleDateString('en-IN', options);
+            
+            const inchargeSelect = document.getElementById('shiftIncharge');
+            const inchargeText = inchargeSelect.options[inchargeSelect.selectedIndex].text;
+            document.getElementById('previewIncharge').textContent = inchargeText !== '-- Select In-Charges --' ? inchargeText : 'Not selected';
+            
+            document.getElementById('previewLabourCount').textContent = document.getElementById('labourCount').value;
+            document.getElementById('previewTotalExpense').textContent = '₹ ' + document.getElementById('totalExpense').textContent;
+            
+            // Update preview table
+            const previewTableBody = document.getElementById('previewTableBody');
+            previewTableBody.innerHTML = '';
+            
+            const rows = document.querySelectorAll('#tableBody tr');
+            rows.forEach((row, index) => {
+                const srNo = index + 1;
+                const labourName = row.querySelector('.labour-name').value || '--';
+                const labourType = row.querySelector('.labour-type').value || '--';
+                const activity = row.querySelector('.activity').value || '--';
+                const vendor = row.querySelector('.vendor').value || '--';
+                const inTime = row.querySelector('.in-time').value || '--';
+                const outTime = row.querySelector('.out-time').value || '--';
+                const wage = row.querySelector('.wage').value || '0';
+                
+                const previewRow = document.createElement('tr');
+                previewRow.innerHTML = `
+                    <td>${srNo}</td>
+                    <td>${labourName}</td>
+                    <td>${labourType}</td>
+                    <td>${activity}</td>
+                    <td>${vendor}</td>
+                    <td>${inTime}</td>
+                    <td>${outTime}</td>
+                    <td>₹ ${parseInt(wage).toLocaleString('en-IN')}</td>
+                `;
+                previewTableBody.appendChild(previewRow);
+            });
+            
+            // Show preview section
+            document.getElementById('previewSection').style.display = 'block';
+            
+            // Scroll to preview
+            document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
